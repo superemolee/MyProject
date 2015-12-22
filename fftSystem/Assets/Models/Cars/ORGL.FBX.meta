@@ -1,0 +1,87 @@
+fileFormatVersion: 2
+guid: b7bafaec494ac0b49b34e0ca819d1a43
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: 06body
+    100002: 06fill
+    100004: 06plates
+    100006: 06tyres
+    100008: 06tyresurf
+    100010: //RootNode
+    400000: 06body
+    400002: 06fill
+    400004: 06plates
+    400006: 06tyres
+    400008: 06tyresurf
+    400010: //RootNode
+    2300000: 06body
+    2300002: 06fill
+    2300004: 06plates
+    2300006: 06tyres
+    2300008: 06tyresurf
+    3300000: 06body
+    3300002: 06fill
+    3300004: 06plates
+    3300006: 06tyres
+    3300008: 06tyresurf
+    4300000: 06body
+    4300002: 06fill
+    4300004: 06plates
+    4300006: 06tyres
+    4300008: 06tyresurf
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 1
+  userData: 

@@ -1,0 +1,179 @@
+fileFormatVersion: 2
+guid: 4669ab907413c4f4c90f2420ee151974
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: BasicCar
+    100002: Car_Floor
+    100004: Chassis
+    100006: Defibrillator
+    100008: Emergency_light
+    100010: Equipment
+    100012: Fire_extinguisher
+    100014: Gearstick
+    100016: Interior
+    100018: Locker_Left
+    100020: Locker_Right
+    100022: Medical_emergency_back_bag
+    100024: Mirrors
+    100026: //RootNode
+    100028: Oxybag
+    100030: Seat_Bank_Back
+    100032: Seat_Left_Front
+    100034: Seat_Right_Front
+    100036: Shelf_Trunk
+    100038: Standard_emergency_back_bag
+    100040: Steering Wheel
+    100042: Tailgate
+    100044: Wheel_Back_Left
+    100046: Wheel_Back_Right
+    100048: Wheel_Front_Left
+    100050: Wheel_Front_Right
+    400000: BasicCar
+    400002: Car_Floor
+    400004: Chassis
+    400006: Defibrillator
+    400008: Emergency_light
+    400010: Equipment
+    400012: Fire_extinguisher
+    400014: Gearstick
+    400016: Interior
+    400018: Locker_Left
+    400020: Locker_Right
+    400022: Medical_emergency_back_bag
+    400024: Mirrors
+    400026: //RootNode
+    400028: Oxybag
+    400030: Seat_Bank_Back
+    400032: Seat_Left_Front
+    400034: Seat_Right_Front
+    400036: Shelf_Trunk
+    400038: Standard_emergency_back_bag
+    400040: Steering Wheel
+    400042: Tailgate
+    400044: Wheel_Back_Left
+    400046: Wheel_Back_Right
+    400048: Wheel_Front_Left
+    400050: Wheel_Front_Right
+    2300000: Car_Floor
+    2300002: Chassis
+    2300004: Defibrillator
+    2300006: Emergency_light
+    2300008: Fire_extinguisher
+    2300010: Gearstick
+    2300012: Locker_Left
+    2300014: Locker_Right
+    2300016: Medical_emergency_back_bag
+    2300018: Mirrors
+    2300020: Oxybag
+    2300022: Seat_Bank_Back
+    2300024: Seat_Left_Front
+    2300026: Seat_Right_Front
+    2300028: Shelf_Trunk
+    2300030: Standard_emergency_back_bag
+    2300032: Steering Wheel
+    2300034: Tailgate
+    2300036: Wheel_Back_Left
+    2300038: Wheel_Back_Right
+    2300040: Wheel_Front_Left
+    2300042: Wheel_Front_Right
+    3300000: Car_Floor
+    3300002: Chassis
+    3300004: Defibrillator
+    3300006: Emergency_light
+    3300008: Fire_extinguisher
+    3300010: Gearstick
+    3300012: Locker_Left
+    3300014: Locker_Right
+    3300016: Medical_emergency_back_bag
+    3300018: Mirrors
+    3300020: Oxybag
+    3300022: Seat_Bank_Back
+    3300024: Seat_Left_Front
+    3300026: Seat_Right_Front
+    3300028: Shelf_Trunk
+    3300030: Standard_emergency_back_bag
+    3300032: Steering Wheel
+    3300034: Tailgate
+    3300036: Wheel_Back_Left
+    3300038: Wheel_Back_Right
+    3300040: Wheel_Front_Left
+    3300042: Wheel_Front_Right
+    4300000: Fire_extinguisher
+    4300002: Medical_emergency_back_bag
+    4300004: Oxybag
+    4300006: Defibrillator
+    4300008: Standard_emergency_back_bag
+    4300010: Emergency_light
+    4300012: Wheel_Front_Right
+    4300014: Wheel_Front_Left
+    4300016: Wheel_Back_Right
+    4300018: Wheel_Back_Left
+    4300020: Mirrors
+    4300022: Steering Wheel
+    4300024: Shelf_Trunk
+    4300026: Seat_Right_Front
+    4300028: Seat_Left_Front
+    4300030: Seat_Bank_Back
+    4300032: Locker_Right
+    4300034: Locker_Left
+    4300036: Gearstick
+    4300038: Car_Floor
+    4300040: Chassis
+    4300042: Tailgate
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

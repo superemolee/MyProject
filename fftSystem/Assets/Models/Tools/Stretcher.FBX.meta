@@ -1,0 +1,81 @@
+fileFormatVersion: 2
+guid: 9c5b9c6729d728142b22fa38978cdd51
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Block:*E2
+    100002: Layer:3D_MESH
+    100004: Layer:3D_MESH 1
+    100006: //RootNode
+    100008: Tires
+    100010: up
+    400000: Block:*E2
+    400002: Layer:3D_MESH
+    400004: Layer:3D_MESH 1
+    400006: //RootNode
+    400008: Tires
+    400010: up
+    2300000: Layer:3D_MESH 1
+    2300002: Tires
+    2300004: up
+    3300000: Layer:3D_MESH 1
+    3300002: Tires
+    3300004: up
+    4300000: Layer:3D_MESH
+    4300002: up
+    4300004: Tires
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00139999995
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

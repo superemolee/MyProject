@@ -1,0 +1,31 @@
+﻿Version 1.0 BETA 4
+------------------
+Further reduced runtime memory usage
+Resolved issue where PlanningStarted event was not paired with PlanningEnded event, throwing off statistics data
+Added mode indicator while running
+Added search field to graph editor to allow searching for specific nodes by name in a large tree
+Resolved issue that prevented the user from adding new node conditions in certain situations
+
+
+Version 1.0 BETA 3 
+------------------
+Resolved issue with [NotInterruptable] attribute not allowing plan to proceed after that task was executed
+PlanBuilder now pre-allocates space for plan lengths of up to 24 (can allocate more on demand, almost never needed)
+Dramatically reduced memory usage at runtime (after initialization)
+Resolved an issue with the planner where some nodes would be duplicated (thanks MoPho games)
+Added visual indicators when viewing in debug mode in Editor to show which nodes failed precondition checks
+
+
+Version 1.0 BETA 2
+------------------
+Added welcome screen and menu options for forums and documentation. 
+Fixed issues with Editor GUI when not using Pro Editor Skin
+Resolved symbol redefinition build error on iOS
+RuntimePlanningInfo component (part of samples) now only works in Editor and Standalone builds (causes exceptions on iOS)
+Added early-exit condition when planner knows it cannot generate a higher-priority plan from the current branch
+Completely refactored how the planner searches for a valid plan
+
+
+Version 1.0 BETA 1
+------------------
+Initial beta release published

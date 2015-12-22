@@ -1,0 +1,8 @@
+Portions of the EXPLOSIONS PACK by MoPho Games (http://www.mophogames.com/explosion-pack/) were used in the examples for HTN Planner for Unity, with the explicit permission of MoPho games.
+
+These portions are covered by the Unity Asset Store license that you agreed to when purchasing HTN Planner for Unity.
+
+To purchase the entire pack or for more information, please visit https://www.assetstore.unity3d.com/#!/content/19705
+
+
+

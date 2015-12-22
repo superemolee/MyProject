@@ -1,0 +1,456 @@
+fileFormatVersion: 2
+guid: 2153a7e8d7f1d2b4c98cdd854eb06373
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: HeadEffector
+    100002: C3D:optical
+    100004: LeftHipEffector
+    100006: //RootNode
+    100008: HipsEffector
+    100010: Head 1
+    100012: Neck
+    100014: RightHandPinky2
+    100016: RightHandPinky1
+    100018: RightHandRing2
+    100020: RightHandRing1
+    100022: RightHandIndex2
+    100024: RightHandIndex1
+    100026: RightHandThumb2
+    100028: RightHandThumb1
+    100030: RightHand
+    100032: RightForeArm
+    100034: RightArm
+    100036: RightShoulder
+    100038: LeftHandPinky2
+    100040: LeftHandPinky1
+    100042: LeftHandRing2
+    100044: LeftHandRing1
+    100046: LeftHandMiddle2
+    100048: LeftHandMiddle1
+    100050: LeftHandIndex2
+    100052: LeftHandIndex1
+    100054: LeftHandThumb2
+    100056: LeftHandThumb1
+    100058: LeftHand
+    100060: LeftForeArm
+    100062: LeftArm
+    100064: LeftShoulder
+    100066: Spine2
+    100068: Spine1
+    100070: Spine
+    100072: RightFootPinky1
+    100074: RightFoot
+    100076: RightLeg
+    100078: RightUpLeg
+    100080: LeftFootPinky1
+    100082: LeftFoot
+    100084: LeftLeg
+    100086: LeftUpLeg
+    100088: Hips
+    100090: Helm_Glas
+    100092: flasche
+    100094: Head
+    100096: GummiMaske
+    100098: Helm
+    100100: Bip01 R Toe0Nub
+    100102: Bip01 R Toe0
+    100104: Bip01 R Foot
+    100106: Bip01 R Calf
+    100108: Bip01 R Thigh
+    100110: Bip01 L Toe0Nub
+    100112: Bip01 L Toe0
+    100114: Bip01 L Foot
+    100116: Bip01 L Calf
+    100118: Bip01 L Thigh
+    100120: Bip01 R Finger4
+    100122: Bip01 R Finger3
+    100124: Bip01 R Finger2
+    100126: Bip01 R Finger1
+    100128: Bip01 R Finger0
+    100130: Bip01 R Hand
+    100132: Bip01 R Forearm
+    100134: Bip01 L Finger4
+    100136: Bip01 L Finger3
+    100138: Bip01 L Finger2
+    100140: Bip01 L Finger1
+    100142: Bip01 L Finger0
+    100144: Bip01 L Hand
+    100146: Bip01 L Forearm
+    100148: VisierBone
+    100150: Bip01 HeadNub
+    100152: Bip01 Head
+    100154: Bip01 Neck
+    100156: Bip01 Spine2
+    100158: Bip01 Spine1
+    100160: Bip01 Spine
+    100162: Bip01 Pelvis
+    100164: Bip01 Footsteps
+    100166: Bip01
+    100168: Body
+    100170: RightShoulderEffector
+    100172: MarcelSkeleton2:RHandNull
+    100174: MarcelSkeleton2:LShinNull
+    100176: RightHandRingEffector
+    100178: C3D:MarcelSkeleton2_Hip4
+    100180: C3D:MarcelSkeleton2_Chest2
+    100182: RightHandIndexEffector
+    100184: RightHandPinkyEffector
+    100186: LeftFootPinkyEffector
+    100188: C3D:MarcelSkeleton2_Chest1
+    100190: C3D:MarcelSkeleton2_LUArm1
+    100192: C3D:MarcelSkeleton2_LUArm2
+    100194: C3D:MarcelSkeleton2_Hip2
+    100196: RightHandMiddleEffector
+    100198: C3D:MarcelSkeleton2_Chest3
+    100200: ChestEndEffector
+    100202: MarcelSkeleton2:LFootEndNull
+    100204: C3D:MarcelSkeleton2_RHand1
+    100206: C3D:MarcelSkeleton2_RUArm3
+    100208: C3D:MarcelSkeleton2_LHand3
+    100210: C3D:MarcelSkeleton2_RHand2
+    100212: RightFootPinkyEffector
+    100214: MarcelSkeleton2:LThighNull
+    100216: C3D:MarcelSkeleton2_LThigh2
+    100218: LeftHandThumbEffector
+    100220: C3D:MarcelSkeleton2_Hip1
+    100222: MarcelSkeleton2:NeckNull
+    100224: LeftHandPinkyEffector
+    100226: MarcelSkeleton2:RShinNull
+    100228: MarcelSkeleton2:RHandEndNull
+    100230: MarcelSkeleton2:ChestNull
+    100232: MarcelSkeleton2:LShoulderNull
+    100234: RightHandThumbEffector
+    100236: MarcelSkeleton2:RFootNull
+    100238: C3D:MarcelSkeleton2_RThigh2
+    100240: MarcelSkeleton2:HeadNull
+    100242: C3D:MarcelSkeleton2_LUArm3
+    100244: C3D:MarcelSkeleton2_RFoot2
+    100246: MarcelSkeleton2:RFootEndNull
+    100248: MarcelSkeleton2:LFootNull
+    100250: MarcelSkeleton2:AbNull
+    100252: C3D:MarcelSkeleton2_LFoot2
+    100254: LeftShoulderEffector
+    100256: LeftHandRingEffector
+    100258: C3D:MarcelSkeleton2_RHand3
+    100260: C3D:MarcelSkeleton2_LThigh1
+    100262: C3D:MarcelSkeleton2_RUArm1
+    100264: C3D:MarcelSkeleton2_RShin2
+    100266: C3D:MarcelSkeleton2_RShin1
+    100268: C3D:MarcelSkeleton2_LHand1
+    100270: MarcelSkeleton2:HipNull
+    100272: C3D:MarcelSkeleton2_RThigh1
+    100274: MarcelSkeleton2:HeadEndNull
+    100276: MarcelSkeleton2:LUArmNull
+    100278: C3D:MarcelSkeleton2_LFoot1
+    100280: MarcelSkeleton2:RFArmNull
+    100282: C3D:MarcelSkeleton2_RUArm2
+    100284: LeftHandMiddleEffector
+    100286: RightHipEffector
+    100288: C3D:MarcelSkeleton2_LHand2
+    100290: ChestOriginEffector
+    100292: MarcelSkeleton2:RShoulderNull
+    100294: MarcelSkeleton2:LHandNull
+    100296: C3D:MarcelSkeleton2_Head3
+    100298: C3D:MarcelSkeleton2_Hip3
+    100300: RightElbowEffector
+    100302: C3D:MarcelSkeleton2_Head1
+    100304: C3D:MarcelSkeleton2_Head2
+    100306: MarcelSkeleton2:LFArmNull
+    100308: MarcelSkeleton2:RUArmNull
+    100310: MarcelSkeleton2:RThighNull
+    100312: LeftHandIndexEffector
+    100314: MarcelSkeleton2:LHandEndNull
+    100316: C3D:MarcelSkeleton2_LShin1
+    100318: C3D:MarcelSkeleton2_LShin2
+    100320: C3D:MarcelSkeleton2_RFoot1
+    100322: Bip01 L Finger01
+    100324: Bip01 R Finger01
+    100326: Bip01 L Finger4Nub
+    100328: Bip01 R UpperArm
+    100330: LeftKneeEffector
+    100332: RightHandMiddle2
+    100334: Bip01 L Finger0Nub
+    100336: Bip01 R Finger2Nub
+    100338: Bip01 R Finger1Nub
+    100340: Bip01 R Finger3Nub
+    100342: Bip01 L Clavicle
+    100344: Bip01 R Finger21
+    100346: Bip01_Ctrl:Reference
+    100348: RightWristEffector
+    100350: RightAnkleEffector
+    100352: Bip01 R Finger41
+    100354: Bip01 R Clavicle
+    100356: LeftWristEffector
+    100358: Bip01 R Finger0Nub
+    100360: Bip01 L Finger3Nub
+    100362: Bip01 R Finger31
+    100364: Bip01 L UpperArm
+    100366: RightHandMiddle1
+    100368: Bip01 L Finger41
+    100370: Bip01 R Finger11
+    100372: RightKneeEffector
+    100374: LeftElbowEffector
+    100376: Bip01 L Finger1Nub
+    100378: Atemschutzhalter
+    100380: Bip01 L Finger2Nub
+    100382: Bip01 R Finger4Nub
+    100384: Bip01 L Finger21
+    100386: AtmungsschlauchStuck
+    100388: LeftAnkleEffector
+    100390: Bip01 L Finger31
+    100392: Bip01 L Finger11
+    400000: HeadEffector
+    400002: C3D:optical
+    400004: LeftHipEffector
+    400006: //RootNode
+    400008: HipsEffector
+    400010: Head 1
+    400012: Neck
+    400014: RightHandPinky2
+    400016: RightHandPinky1
+    400018: RightHandRing2
+    400020: RightHandRing1
+    400022: RightHandIndex2
+    400024: RightHandIndex1
+    400026: RightHandThumb2
+    400028: RightHandThumb1
+    400030: RightHand
+    400032: RightForeArm
+    400034: RightArm
+    400036: RightShoulder
+    400038: LeftHandPinky2
+    400040: LeftHandPinky1
+    400042: LeftHandRing2
+    400044: LeftHandRing1
+    400046: LeftHandMiddle2
+    400048: LeftHandMiddle1
+    400050: LeftHandIndex2
+    400052: LeftHandIndex1
+    400054: LeftHandThumb2
+    400056: LeftHandThumb1
+    400058: LeftHand
+    400060: LeftForeArm
+    400062: LeftArm
+    400064: LeftShoulder
+    400066: Spine2
+    400068: Spine1
+    400070: Spine
+    400072: RightFootPinky1
+    400074: RightFoot
+    400076: RightLeg
+    400078: RightUpLeg
+    400080: LeftFootPinky1
+    400082: LeftFoot
+    400084: LeftLeg
+    400086: LeftUpLeg
+    400088: Hips
+    400090: Helm_Glas
+    400092: flasche
+    400094: Head
+    400096: GummiMaske
+    400098: Helm
+    400100: Bip01 R Toe0Nub
+    400102: Bip01 R Toe0
+    400104: Bip01 R Foot
+    400106: Bip01 R Calf
+    400108: Bip01 R Thigh
+    400110: Bip01 L Toe0Nub
+    400112: Bip01 L Toe0
+    400114: Bip01 L Foot
+    400116: Bip01 L Calf
+    400118: Bip01 L Thigh
+    400120: Bip01 R Finger4
+    400122: Bip01 R Finger3
+    400124: Bip01 R Finger2
+    400126: Bip01 R Finger1
+    400128: Bip01 R Finger0
+    400130: Bip01 R Hand
+    400132: Bip01 R Forearm
+    400134: Bip01 L Finger4
+    400136: Bip01 L Finger3
+    400138: Bip01 L Finger2
+    400140: Bip01 L Finger1
+    400142: Bip01 L Finger0
+    400144: Bip01 L Hand
+    400146: Bip01 L Forearm
+    400148: VisierBone
+    400150: Bip01 HeadNub
+    400152: Bip01 Head
+    400154: Bip01 Neck
+    400156: Bip01 Spine2
+    400158: Bip01 Spine1
+    400160: Bip01 Spine
+    400162: Bip01 Pelvis
+    400164: Bip01 Footsteps
+    400166: Bip01
+    400168: Body
+    400170: RightShoulderEffector
+    400172: MarcelSkeleton2:RHandNull
+    400174: MarcelSkeleton2:LShinNull
+    400176: RightHandRingEffector
+    400178: C3D:MarcelSkeleton2_Hip4
+    400180: C3D:MarcelSkeleton2_Chest2
+    400182: RightHandIndexEffector
+    400184: RightHandPinkyEffector
+    400186: LeftFootPinkyEffector
+    400188: C3D:MarcelSkeleton2_Chest1
+    400190: C3D:MarcelSkeleton2_LUArm1
+    400192: C3D:MarcelSkeleton2_LUArm2
+    400194: C3D:MarcelSkeleton2_Hip2
+    400196: RightHandMiddleEffector
+    400198: C3D:MarcelSkeleton2_Chest3
+    400200: ChestEndEffector
+    400202: MarcelSkeleton2:LFootEndNull
+    400204: C3D:MarcelSkeleton2_RHand1
+    400206: C3D:MarcelSkeleton2_RUArm3
+    400208: C3D:MarcelSkeleton2_LHand3
+    400210: C3D:MarcelSkeleton2_RHand2
+    400212: RightFootPinkyEffector
+    400214: MarcelSkeleton2:LThighNull
+    400216: C3D:MarcelSkeleton2_LThigh2
+    400218: LeftHandThumbEffector
+    400220: C3D:MarcelSkeleton2_Hip1
+    400222: MarcelSkeleton2:NeckNull
+    400224: LeftHandPinkyEffector
+    400226: MarcelSkeleton2:RShinNull
+    400228: MarcelSkeleton2:RHandEndNull
+    400230: MarcelSkeleton2:ChestNull
+    400232: MarcelSkeleton2:LShoulderNull
+    400234: RightHandThumbEffector
+    400236: MarcelSkeleton2:RFootNull
+    400238: C3D:MarcelSkeleton2_RThigh2
+    400240: MarcelSkeleton2:HeadNull
+    400242: C3D:MarcelSkeleton2_LUArm3
+    400244: C3D:MarcelSkeleton2_RFoot2
+    400246: MarcelSkeleton2:RFootEndNull
+    400248: MarcelSkeleton2:LFootNull
+    400250: MarcelSkeleton2:AbNull
+    400252: C3D:MarcelSkeleton2_LFoot2
+    400254: LeftShoulderEffector
+    400256: LeftHandRingEffector
+    400258: C3D:MarcelSkeleton2_RHand3
+    400260: C3D:MarcelSkeleton2_LThigh1
+    400262: C3D:MarcelSkeleton2_RUArm1
+    400264: C3D:MarcelSkeleton2_RShin2
+    400266: C3D:MarcelSkeleton2_RShin1
+    400268: C3D:MarcelSkeleton2_LHand1
+    400270: MarcelSkeleton2:HipNull
+    400272: C3D:MarcelSkeleton2_RThigh1
+    400274: MarcelSkeleton2:HeadEndNull
+    400276: MarcelSkeleton2:LUArmNull
+    400278: C3D:MarcelSkeleton2_LFoot1
+    400280: MarcelSkeleton2:RFArmNull
+    400282: C3D:MarcelSkeleton2_RUArm2
+    400284: LeftHandMiddleEffector
+    400286: RightHipEffector
+    400288: C3D:MarcelSkeleton2_LHand2
+    400290: ChestOriginEffector
+    400292: MarcelSkeleton2:RShoulderNull
+    400294: MarcelSkeleton2:LHandNull
+    400296: C3D:MarcelSkeleton2_Head3
+    400298: C3D:MarcelSkeleton2_Hip3
+    400300: RightElbowEffector
+    400302: C3D:MarcelSkeleton2_Head1
+    400304: C3D:MarcelSkeleton2_Head2
+    400306: MarcelSkeleton2:LFArmNull
+    400308: MarcelSkeleton2:RUArmNull
+    400310: MarcelSkeleton2:RThighNull
+    400312: LeftHandIndexEffector
+    400314: MarcelSkeleton2:LHandEndNull
+    400316: C3D:MarcelSkeleton2_LShin1
+    400318: C3D:MarcelSkeleton2_LShin2
+    400320: C3D:MarcelSkeleton2_RFoot1
+    400322: Bip01 L Finger01
+    400324: Bip01 R Finger01
+    400326: Bip01 L Finger4Nub
+    400328: Bip01 R UpperArm
+    400330: LeftKneeEffector
+    400332: RightHandMiddle2
+    400334: Bip01 L Finger0Nub
+    400336: Bip01 R Finger2Nub
+    400338: Bip01 R Finger1Nub
+    400340: Bip01 R Finger3Nub
+    400342: Bip01 L Clavicle
+    400344: Bip01 R Finger21
+    400346: Bip01_Ctrl:Reference
+    400348: RightWristEffector
+    400350: RightAnkleEffector
+    400352: Bip01 R Finger41
+    400354: Bip01 R Clavicle
+    400356: LeftWristEffector
+    400358: Bip01 R Finger0Nub
+    400360: Bip01 L Finger3Nub
+    400362: Bip01 R Finger31
+    400364: Bip01 L UpperArm
+    400366: RightHandMiddle1
+    400368: Bip01 L Finger41
+    400370: Bip01 R Finger11
+    400372: RightKneeEffector
+    400374: LeftElbowEffector
+    400376: Bip01 L Finger1Nub
+    400378: Atemschutzhalter
+    400380: Bip01 L Finger2Nub
+    400382: Bip01 R Finger4Nub
+    400384: Bip01 L Finger21
+    400386: AtmungsschlauchStuck
+    400388: LeftAnkleEffector
+    400390: Bip01 L Finger31
+    400392: Bip01 L Finger11
+    7400000: Take 001
+    7400002: gehtmitStandrohrZumUnterflurhydrant
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 3
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 3
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 2
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 1
+  userData: 

@@ -1,0 +1,337 @@
+fileFormatVersion: 2
+guid: 71bc7d9a86769134aaaec2ad9e94a3b5
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Bip01 Spine2
+    100002: Bip01 R Finger3
+    100004: Bip01 R Finger2
+    100006: Bip01 L Toe0Nub
+    100008: Bip01 L Toe0
+    100010: Bip01 L Thigh
+    100012: Bip01 R Finger0
+    100014: Bip01 R Calf
+    100016: Bip01 L Finger3
+    100018: Bip01 L Finger2
+    100020: Bip01 L Finger4
+    100022: Bip01 R Finger1
+    100024: Bip01 L Finger1
+    100026: Bip01 R Forearm
+    100028: Bip01 L Calf
+    100030: Bip01 R Finger4
+    100032: Bip01 L Foot
+    100034: Bip01 R Foot
+    100036: Bip01 R Toe0
+    100038: Bip01 R Thigh
+    100040: Bip01 R Hand
+    100042: RightHandMiddle2
+    100044: GummiMaske
+    100046: ChestOriginEffector
+    100048: Helm_Glas
+    100050: RightHandMiddle1
+    100052: LeftShoulderEffector
+    100054: LeftElbowEffector
+    100056: LeftHandThumbEffector
+    100058: RightKneeEffector
+    100060: RightShoulderEffector
+    100062: LeftHandIndexEffector
+    100064: LeftWristEffector
+    100066: RightHipEffector
+    100068: LeftHandMiddleEffector
+    100070: ChestEndEffector
+    100072: LeftAnkleEffector
+    100074: LeftKneeEffector
+    100076: RightWristEffector
+    100078: RightAnkleEffector
+    100080: RightElbowEffector
+    100082: LeftHandRingEffector
+    100084: LeftHandPinkyEffector
+    100086: RightHandThumbEffector
+    100088: RightHandIndexEffector
+    100090: RightHandMiddleEffector
+    100092: RightHandRingEffector
+    100094: flasche
+    100096: RightHandPinkyEffector
+    100098: LeftFootPinkyEffector
+    100100: RightFootPinkyEffector
+    100102: LeftHipEffector
+    100104: //RootNode
+    100106: HeadEffector
+    100108: HipsEffector
+    100110: Bip01 R Toe0Nub
+    100112: Head 1
+    100114: Neck
+    100116: RightHandPinky2
+    100118: Helm
+    100120: RightHandPinky1
+    100122: RightHandRing2
+    100124: RightHandRing1
+    100126: RightHandIndex2
+    100128: RightHandIndex1
+    100130: RightHandThumb2
+    100132: RightHandThumb1
+    100134: RightHand
+    100136: RightForeArm
+    100138: RightArm
+    100140: Head
+    100142: Bip01 Neck
+    100144: Bip01 HeadNub
+    100146: VisierBone
+    100148: Bip01 Head
+    100150: Bip01 L Hand
+    100152: Bip01 L Finger0
+    100154: Bip01 L Forearm
+    100156: Bip01 Spine1
+    100158: Bip01 Spine
+    100160: Bip01 Pelvis
+    100162: Bip01 Footsteps
+    100164: Bip01
+    100166: Body
+    100168: RightShoulder
+    100170: LeftHandPinky2
+    100172: LeftHandPinky1
+    100174: LeftHandRing2
+    100176: LeftHandRing1
+    100178: LeftHandMiddle2
+    100180: LeftHandMiddle1
+    100182: AtmungsschlauchStuck
+    100184: Bip01 R Finger31
+    100186: Bip01 L Finger21
+    100188: LeftHandIndex2
+    100190: LeftHandIndex1
+    100192: Bip01 R Finger1Nub
+    100194: Bip01 R Clavicle
+    100196: Bip01 R Finger01
+    100198: LeftHandThumb2
+    100200: LeftHandThumb1
+    100202: LeftHand
+    100204: LeftForeArm
+    100206: Bip01_Ctrl:Reference
+    100208: Bip01 L Finger3Nub
+    100210: Bip01 R Finger41
+    100212: LeftArm
+    100214: Bip01 L Finger4Nub
+    100216: Bip01 R Finger4Nub
+    100218: LeftShoulder
+    100220: Bip01 L Finger01
+    100222: Bip01 R UpperArm
+    100224: Bip01 R Finger3Nub
+    100226: Spine2
+    100228: Bip01 L Finger41
+    100230: Bip01 L Finger31
+    100232: Spine1
+    100234: Spine
+    100236: Atemschutzhalter
+    100238: Bip01 L Finger2Nub
+    100240: Bip01 R Finger21
+    100242: RightFootPinky1
+    100244: Bip01 R Finger11
+    100246: Bip01 L UpperArm
+    100248: Bip01 L Finger11
+    100250: RightFoot
+    100252: RightLeg
+    100254: Bip01 R Finger2Nub
+    100256: Bip01 L Finger0Nub
+    100258: Bip01 R Finger0Nub
+    100260: RightUpLeg
+    100262: LeftFootPinky1
+    100264: LeftFoot
+    100266: LeftLeg
+    100268: LeftUpLeg
+    100270: Hips
+    100272: Bip01 L Clavicle
+    100276: Bip01 L Finger1Nub
+    400000: Bip01 Spine2
+    400002: Bip01 R Finger3
+    400004: Bip01 R Finger2
+    400006: Bip01 L Toe0Nub
+    400008: Bip01 L Toe0
+    400010: Bip01 L Thigh
+    400012: Bip01 R Finger0
+    400014: Bip01 R Calf
+    400016: Bip01 L Finger3
+    400018: Bip01 L Finger2
+    400020: Bip01 L Finger4
+    400022: Bip01 R Finger1
+    400024: Bip01 L Finger1
+    400026: Bip01 R Forearm
+    400028: Bip01 L Calf
+    400030: Bip01 R Finger4
+    400032: Bip01 L Foot
+    400034: Bip01 R Foot
+    400036: Bip01 R Toe0
+    400038: Bip01 R Thigh
+    400040: Bip01 R Hand
+    400042: RightHandMiddle2
+    400044: GummiMaske
+    400046: ChestOriginEffector
+    400048: Helm_Glas
+    400050: RightHandMiddle1
+    400052: LeftShoulderEffector
+    400054: LeftElbowEffector
+    400056: LeftHandThumbEffector
+    400058: RightKneeEffector
+    400060: RightShoulderEffector
+    400062: LeftHandIndexEffector
+    400064: LeftWristEffector
+    400066: RightHipEffector
+    400068: LeftHandMiddleEffector
+    400070: ChestEndEffector
+    400072: LeftAnkleEffector
+    400074: LeftKneeEffector
+    400076: RightWristEffector
+    400078: RightAnkleEffector
+    400080: RightElbowEffector
+    400082: LeftHandRingEffector
+    400084: LeftHandPinkyEffector
+    400086: RightHandThumbEffector
+    400088: RightHandIndexEffector
+    400090: RightHandMiddleEffector
+    400092: RightHandRingEffector
+    400094: flasche
+    400096: RightHandPinkyEffector
+    400098: LeftFootPinkyEffector
+    400100: RightFootPinkyEffector
+    400102: LeftHipEffector
+    400104: //RootNode
+    400106: HeadEffector
+    400108: HipsEffector
+    400110: Bip01 R Toe0Nub
+    400112: Head 1
+    400114: Neck
+    400116: RightHandPinky2
+    400118: Helm
+    400120: RightHandPinky1
+    400122: RightHandRing2
+    400124: RightHandRing1
+    400126: RightHandIndex2
+    400128: RightHandIndex1
+    400130: RightHandThumb2
+    400132: RightHandThumb1
+    400134: RightHand
+    400136: RightForeArm
+    400138: RightArm
+    400140: Head
+    400142: Bip01 Neck
+    400144: Bip01 HeadNub
+    400146: VisierBone
+    400148: Bip01 Head
+    400150: Bip01 L Hand
+    400152: Bip01 L Finger0
+    400154: Bip01 L Forearm
+    400156: Bip01 Spine1
+    400158: Bip01 Spine
+    400160: Bip01 Pelvis
+    400162: Bip01 Footsteps
+    400164: Bip01
+    400166: Body
+    400168: RightShoulder
+    400170: LeftHandPinky2
+    400172: LeftHandPinky1
+    400174: LeftHandRing2
+    400176: LeftHandRing1
+    400178: LeftHandMiddle2
+    400180: LeftHandMiddle1
+    400182: AtmungsschlauchStuck
+    400184: Bip01 R Finger31
+    400186: Bip01 L Finger21
+    400188: LeftHandIndex2
+    400190: LeftHandIndex1
+    400192: Bip01 R Finger1Nub
+    400194: Bip01 R Clavicle
+    400196: Bip01 R Finger01
+    400198: LeftHandThumb2
+    400200: LeftHandThumb1
+    400202: LeftHand
+    400204: LeftForeArm
+    400206: Bip01_Ctrl:Reference
+    400208: Bip01 L Finger3Nub
+    400210: Bip01 R Finger41
+    400212: LeftArm
+    400214: Bip01 L Finger4Nub
+    400216: Bip01 R Finger4Nub
+    400218: LeftShoulder
+    400220: Bip01 L Finger01
+    400222: Bip01 R UpperArm
+    400224: Bip01 R Finger3Nub
+    400226: Spine2
+    400228: Bip01 L Finger41
+    400230: Bip01 L Finger31
+    400232: Spine1
+    400234: Spine
+    400236: Atemschutzhalter
+    400238: Bip01 L Finger2Nub
+    400240: Bip01 R Finger21
+    400242: RightFootPinky1
+    400244: Bip01 R Finger11
+    400246: Bip01 L UpperArm
+    400248: Bip01 L Finger11
+    400250: RightFoot
+    400252: RightLeg
+    400254: Bip01 R Finger2Nub
+    400256: Bip01 L Finger0Nub
+    400258: Bip01 R Finger0Nub
+    400260: RightUpLeg
+    400262: LeftFootPinky1
+    400264: LeftFoot
+    400266: LeftLeg
+    400268: LeftUpLeg
+    400270: Hips
+    400272: Bip01 L Clavicle
+    400276: Bip01 L Finger1Nub
+    7400000: Take 001
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 3
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 3
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 2
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 1
+  userData: 
