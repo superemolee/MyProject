@@ -462,15 +462,18 @@ public class FirefighterToolOperator : RescuerGeneral
 	{
 
 		while (obj != null) {
-//			if (obj.transform.renderer.enabled == false)
-//				yield return TaskStatus.Succeeded;
-			// Pick up animation.
+//			// Pick up animation.
+//			int IsPickUp_id = Animator.StringToHash ("IsPickUp");
+//			m_animator.SetBool (IsPickUp_id, true);
+//			// while animation is playing
+//			obj.transform.parent = gameObject.transform.Find ("Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 R Clavicle/Bip01 R UpperArm/Bip01 R Forearm/Bip01 R Hand");
+//			obj.transform.localRotation = Quaternion.identity;
+//			obj.transform.localPosition = Vector3.zero;
+
+			InteractableTool tool =  obj.GetComponent<InteractableTool>();
+			tool.Initialize(gameObject,m_animator,new Vector3(0,0,0));
+
 			int IsPickUp_id = Animator.StringToHash ("IsPickUp");
-			m_animator.SetBool (IsPickUp_id, true);
-			// while animation is playing
-			obj.transform.parent = gameObject.transform.Find ("Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 R Clavicle/Bip01 R UpperArm/Bip01 R Forearm/Bip01 R Hand");
-			obj.transform.localRotation = Quaternion.identity;
-			obj.transform.localPosition = Vector3.zero;
 			// TODO: do I need to create some blackboard variable with e.g. Toolinrighthand or Objinlefthand...
 			if (m_animator.GetCurrentAnimatorStateInfo (0).IsName ("PickUp")) {
 				if (this.m_animator.GetCurrentAnimatorStateInfo (0).normalizedTime < 0.7) {

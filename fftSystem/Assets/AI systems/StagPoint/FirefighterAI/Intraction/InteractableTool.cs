@@ -27,7 +27,7 @@ public class InteractableTool : MonoBehaviour {
 		
 	}
 
-	void Initialize(GameObject tUser, Animator a, Vector3 uPos){
+	public void Initialize(GameObject tUser, Animator a, Vector3 uPos){
 		toolUser = tUser;
 		anim = a;
 		usedPos = uPos;
@@ -37,17 +37,23 @@ public class InteractableTool : MonoBehaviour {
 	/// <summary>
 	/// Define how to pick up this tool, and this will be defined together with animations.
 	/// </summary>
-	void ToolPickUp(){
-
+	public void ToolPickUp(){
+		// TODO: to solve the one hand picking/two hands picking or multiperson picking here.
 		if(is_init){
-
+			// Pick up animation.
+			int IsPickUp_id = Animator.StringToHash ("IsPickUp");
+			anim.SetBool (IsPickUp_id, true);
+			// while animation is playing
+			gameObject.transform.parent = toolUser.transform.Find ("Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 R Clavicle/Bip01 R UpperArm/Bip01 R Forearm/Bip01 R Hand");
+			gameObject.transform.localRotation = Quaternion.identity;
+			gameObject.transform.localPosition = Vector3.zero;
 		}
 	}
 
 	/// <summary>
 	/// Define how to use the tool, and this will be defined together with animations. 
 	/// </summary>
-	void ToolUse(){
+	public void ToolUse(){
 
 		if(is_init){
 			
