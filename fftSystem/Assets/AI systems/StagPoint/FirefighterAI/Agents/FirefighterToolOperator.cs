@@ -454,7 +454,6 @@ public class FirefighterToolOperator : RescuerGeneral
 	/// <summary>
 	/// This method is used for simply play the pick up animation and attach the object to the hand.
 	/// Moreover, the game logic should be considered, e.g. how to pick, one hand, or two hands, how much to pick etc. 
-	/// TODO: pick up with one hand atm, in the future, I could add pick up with two hands, pick up with different ppl, etc.
 	/// </summary>
 	/// <returns>The up.</returns>
 	/// <param name="obj">Object.</param>
@@ -472,7 +471,7 @@ public class FirefighterToolOperator : RescuerGeneral
 
 			InteractableTool tool =  obj.GetComponent<InteractableTool>();
 			tool.Initialize(gameObject,m_animator,new Vector3(0,0,0));
-
+			tool.ToolPickUp();
 			int IsPickUp_id = Animator.StringToHash ("IsPickUp");
 			// TODO: do I need to create some blackboard variable with e.g. Toolinrighthand or Objinlefthand...
 			if (m_animator.GetCurrentAnimatorStateInfo (0).IsName ("PickUp")) {
@@ -481,6 +480,7 @@ public class FirefighterToolOperator : RescuerGeneral
 				} else {
 					m_animator.SetBool (IsPickUp_id, false);
 					//hasTool = true;
+                    tool.tag = "UsedTools";
 					yield return TaskStatus.Succeeded;
 				}
 			} else {
@@ -549,19 +549,40 @@ public class FirefighterToolOperator : RescuerGeneral
 	/// Question: How details I need to implement to operate a tool? 
 	/// </summary>
 	/// <returns>The tool.</returns>
-	public IEnumerator UseTool ([ScriptParameter] GameObject tool)
+	public IEnumerator UseTool ([ScriptParameter] GameObject obj)
 	{
-		// TODO: how to manage the tool more efficiently ...
-		if (tool.name == "StableTool_2_1") {
+//        while (obj != null) {
+//            InteractableTool tool = obj.GetComponent<InteractableTool> ();
+//            tool.Initialize (gameObject, m_animator, new Vector3 (0, 0, 0));
+//            tool.ToolUse ();
+//            
+//            int IsStableSills_id = Animator.StringToHash ("IsStableSills");
+//            int IsStableWheels_id = Animator.StringToHash ("IsStableWheels");
+//            if (m_animator.GetCurrentAnimatorStateInfo (0).IsName ("Operate")) {
+//                if (this.m_animator.GetCurrentAnimatorStateInfo (0).normalizedTime < 0.7) {
+//                    yield return TaskStatus.Running;
+//                } else {
+//                    m_animator.SetBool (IsStableSills_id, false);
+//                    CurrentStablePointSill.renderer.enabled = true;
+//                    //obj.renderer.enabled = true;
+//                    Car1.GetComponent<CrashedCar> ().StablePointSills.Remove (CurrentStablePointSill);
+//                    yield return TaskStatus.Succeeded;
+//                }
+//            } else {
+//                yield return TaskStatus.Running;
+//            }
+//        }
+        // TODO: how to manage the tool more efficiently ...
+        if (obj.name == "StableTool_2_1") {
 
-			while (tool != null) {
+            while (obj != null) {
 				//GameObject obj=CurrentStablePointSill;
 				//Car1.GetComponent<CrashedCar> ().StablePointSills.Remove (CurrentStablePointSill);
 				// Using stable sills tool animation.
 				int IsStableSills_id = Animator.StringToHash ("IsStableSills");
 				m_animator.SetBool (IsStableSills_id, true);
 				// After tool used... 
-				tool.renderer.enabled = false;
+                obj.renderer.enabled = false;
 
 			
 				if (m_animator.GetCurrentAnimatorStateInfo (0).IsName ("Operate")) {
@@ -578,8 +599,8 @@ public class FirefighterToolOperator : RescuerGeneral
 					yield return TaskStatus.Running;
 				}
 			}
-		} else if (tool.name == "StableTool_1_1") {
-			while (tool != null) {
+        } else if (obj.name == "StableTool_1_1") {
+            while (obj != null) {
 				//GameObject obj=CurrentStablePointWheel;
 				//Car1.GetComponent<CrashedCar> ().StablePointWheels.Remove (CurrentStablePointWheel);
 
@@ -587,7 +608,7 @@ public class FirefighterToolOperator : RescuerGeneral
 				int IsStableWheels_id = Animator.StringToHash ("IsStableWheels");
 				m_animator.SetBool (IsStableWheels_id, true);
 				// After tool used...
-				tool.renderer.enabled = false;
+                obj.renderer.enabled = false;
 
 
 				if (m_animator.GetCurrentAnimatorStateInfo (0).IsName ("Operate")) {
@@ -609,7 +630,7 @@ public class FirefighterToolOperator : RescuerGeneral
 				}
 			}
 		}
-		tool = null;
+		obj = null;
 		yield return TaskStatus.Failed;
 		
 	}

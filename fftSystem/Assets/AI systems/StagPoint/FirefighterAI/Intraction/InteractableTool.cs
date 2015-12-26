@@ -39,6 +39,7 @@ public class InteractableTool : MonoBehaviour {
 	/// </summary>
 	public void ToolPickUp(){
 		// TODO: to solve the one hand picking/two hands picking or multiperson picking here.
+		// default pick up is using one hand(right hand) pick up
 		if(is_init){
 			// Pick up animation.
 			int IsPickUp_id = Animator.StringToHash ("IsPickUp");
@@ -56,9 +57,15 @@ public class InteractableTool : MonoBehaviour {
 	public void ToolUse(){
 
 		if(is_init){
-			
-		}
-	}
+            //GameObject obj=CurrentStablePointSill;
+            //Car1.GetComponent<CrashedCar> ().StablePointSills.Remove (CurrentStablePointSill);
+            // Using stable sills tool animation.
+            int IsStableSills_id = Animator.StringToHash ("IsStableSills");
+            anim.SetBool (IsStableSills_id, true);
+            // After tool used... 
+            //tool.renderer.enabled = false;
+        }
+    }
 
 
 }
