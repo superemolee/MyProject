@@ -675,10 +675,17 @@ public class FirefighterToolOperator : RescuerGeneral
 				toolobj = tool;
 		}
 
-		// test if there is a child
-		toolItem = toolType + "_1";
-		Transform child = toolobj.transform.FindChild (toolItem);
-		if (child == null) {
+        // test if there is a child
+        Transform child =null;
+        for (int i = 0; i<6; i++) {
+            toolItem = toolType + "_" + (i+1);
+            child = toolobj.transform.FindChild (toolItem);
+            if(child==null)
+                continue;
+            else
+                break;
+        }
+        if (child == null) {
 			toolItemObjects.Add (toolobj);
 			return toolItemObjects;
 		}
@@ -692,6 +699,15 @@ public class FirefighterToolOperator : RescuerGeneral
 		}
 		return toolItemObjects;
 	}
+#endregion
+
+#region Effector
+    public IEnumerator Effector()
+    {
+        
+        yield return TaskStatus.Succeeded;
+        
+    }
 #endregion
 
 
