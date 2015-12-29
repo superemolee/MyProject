@@ -30,4 +30,25 @@ public class Sphereagent : MonoBehaviour {
 		return TaskStatus.Succeeded;
 		
 	}
+
+    public TaskStatus dosomething3()
+    {
+        Debug.LogWarning ("dosomething3");
+        return TaskStatus.Succeeded;
+        
+    }
+
+    public TaskStatus dosomething4()
+    {
+        Debug.LogWarning ("dosomething3");
+        return TaskStatus.Succeeded;
+        
+    }
+
+    public TaskStatus dosomething5()
+    {
+        Debug.LogWarning ("dosomething3");
+        return TaskStatus.Succeeded;
+        
+    }
 }

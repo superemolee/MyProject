@@ -82,10 +82,10 @@ public class FirefighterToolOperator : RescuerGeneral
 	private GameObject
 		Tool;
 
-	[BlackboardVariable]
-	[NonSerialized]
-	private bool
-		hasTool;
+//	[BlackboardVariable]
+//	[NonSerialized]
+//	private bool
+//		hasTool;
 
 	[BlackboardVariable]
 	[NonSerialized]
