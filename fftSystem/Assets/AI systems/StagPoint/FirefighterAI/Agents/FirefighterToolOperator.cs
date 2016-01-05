@@ -57,6 +57,12 @@ public class FirefighterToolOperator : RescuerGeneral
 	private int
 		StablePointWheelsCounter;
 
+	[BlackboardVariable]
+	[NonSerialized]
+	private int
+		ToughGlassCount;
+
+
 //	[BlackboardVariable]
 //	[NonSerialized]
 //	private VectorList
@@ -701,14 +707,21 @@ public class FirefighterToolOperator : RescuerGeneral
 	}
 #endregion
 
-#region Effector
-    public IEnumerator Effector()
-    {
-        
-        yield return TaskStatus.Succeeded;
-        
-    }
+#region Glass Management
+	public IEnumerator ManageToughGlass ([ScriptParameter] GameObject obj){
+		yield return TaskStatus.Succeeded;
+	}
+
+	public IEnumerator TapeGlass ([ScriptParameter] GameObject obj){
+		yield return TaskStatus.Succeeded;
+	}
+
+	public IEnumerator ManageLaminateGlass ([ScriptParameter] GameObject obj){
+		yield return TaskStatus.Succeeded;
+	}
 #endregion
+
+
 
 
 }
