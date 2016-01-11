@@ -54,6 +54,9 @@ public class RescuerGeneral : MonoBehaviour {
 		case 8:
 			runningTask = Tasks.StableWheels;
 			break;
+		case 9:
+			runningTask = Tasks.ManageGlass;
+			break;
 		default:
 			runningTask = Tasks.Free;
 			break;

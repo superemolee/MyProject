@@ -140,6 +140,8 @@ public class FirefighterToolOperator : RescuerGeneral
 			TooltoFind = "StableTool_2";
 		} else if (runningTask == Tasks.StableWheels) {
 			TooltoFind = "StableTool_1";
+		} else if(runningTask == Tasks.ManageGlass){
+			TooltoFind = "Klebebandabroller_1";
 		}
 		taskSetter ();
 	}
@@ -691,10 +693,6 @@ public class FirefighterToolOperator : RescuerGeneral
             else
                 break;
         }
-        if (child == null) {
-			toolItemObjects.Add (toolobj);
-			return toolItemObjects;
-		}
 
 		// Calculate the name of the tool
 		for (int i = 0; i < 6; i++) {
@@ -702,6 +700,11 @@ public class FirefighterToolOperator : RescuerGeneral
 			Transform children = toolobj.transform.FindChild (toolItem);
 			if (children != null && (children.gameObject.tag == tag))
 				toolItemObjects.Add (children.gameObject);
+		}
+
+		if (child == null) {
+			toolItemObjects.Add (toolobj);
+			return toolItemObjects;
 		}
 		return toolItemObjects;
 	}
