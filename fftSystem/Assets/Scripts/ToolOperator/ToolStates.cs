@@ -1,5 +1,6 @@
 ﻿namespace ToolStates
 {
+
     // this enum track the state whether the tool is in use
     public enum ToolUseStates
     {

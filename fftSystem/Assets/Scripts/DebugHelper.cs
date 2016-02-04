@@ -3,7 +3,7 @@ using System.Collections;
 
 public class DebugHelper : MonoBehaviour {
 
-    public float gamespeed = 2.0f;
+    public float gamespeed = 1f;
 	// Use this for initialization
 	void Start () {
         Time.timeScale = gamespeed;

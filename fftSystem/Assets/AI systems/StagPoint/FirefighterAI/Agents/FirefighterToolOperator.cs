@@ -12,6 +12,7 @@ using StagPoint.Planning.Components;
 using Firefighter.Utilities;
 
 [RequireComponent( typeof(TaskNetworkPlanner) )]
+[RequireComponent( typeof(ToolController) )]
 public class FirefighterToolOperator : RescuerGeneral
 {
 	private NavMeshAgent nav;
@@ -19,6 +20,8 @@ public class FirefighterToolOperator : RescuerGeneral
 	private float turnDirection = 1f;
 	private float baseNavSpeed = 6f;
 	private float baseNavAcceleration = 12f;
+
+    public ToolController toolController;
 
 #region Blackboard vaiables
 
@@ -122,7 +125,8 @@ public class FirefighterToolOperator : RescuerGeneral
 	// Use this for initialization
 	void Start ()
 	{
-
+        if(toolController == null)
+            toolController = GetComponent<ToolController>();
 	}
 	
 	// Update is called once per frame

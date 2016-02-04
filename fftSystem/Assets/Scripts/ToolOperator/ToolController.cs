@@ -5,13 +5,13 @@ using System.Collections.Generic;
 public class ToolController : MonoBehaviour
 {
     // all tools that the firefighter have
-    public GameObject[] tools;
+    public List<GameObject> toolsInHand;
 
     // the selected tool to use
     public GameObject selectedTool;
 
     // tool script can get the type, states etc. infor for the tools
-    public BaseToolScript toolScript;
+    public BaseToolScript selectedToolScript;
 
     // animator controller deals with animations etc.
     public Animator toolUserAnim;
@@ -24,21 +24,22 @@ public class ToolController : MonoBehaviour
     void Start()
     {
         // there is no tool in firefighters hand when game starts
-        tools = null;
+        toolsInHand = new List<GameObject>();
         selectedTool = null;
 
-        toolScript = null;
+        selectedToolScript = null;
 
         toolUserAnim = GetComponent<Animator>();
 
-        // init with the specific firefighter role 
+        // init with the specific firefighter role
         // TODO to create the others
         // TODO WARNING this might not necessary
         // Use the tool name in HTN parameters
-        if (toolUser = null)
+        if (toolUser == null)
             toolUser = GetComponent<FirefighterToolOperator>();
-        if (toolUser = null)
+        if (toolUser == null)
             toolUser = GetComponent<FirefighterBackUp>();
+
     }
 	
     // Update is called once per frame
@@ -47,83 +48,85 @@ public class ToolController : MonoBehaviour
         // connect the tasks with tools
     }
 
-    public GameObject GetToolFromName(string toolName){
-        // TODO: this function is similiar as below
-        // but need to find the exact object
-    }
-
     /// <summary>
-    /// According to the type of the tool, and the tag information, this function can return an array of an object list that the firefighter will use.
+    /// Find the tool game object within the tag. This function is only used to get to know
+    /// where is the tool and where to get the tool object.
     /// </summary>
-    /// <returns>The exact tool from type.</returns>
-    /// <param name="toolType">Tool type.</param>
-    /// <param name="tag">Tag.</param>
-    public List<GameObject> findExactToolFromType (string toolType, string tag)
+    /// <returns>The tool with the correct name.</returns>
+    /// <param name="toolName">Tool name: this is the name of the tool with out postfix, 
+    /// and this method can find the coorect tool with the correct name. 
+    /// </param>
+    /// <param name="tag">Tag: is telling where to find the tool. There are two tags: 
+    /// InToolStageAreaTools and NotInToolStageAreaTools. This tag can also be a 
+    /// parameter from primitive task.
+    /// </param>
+    public GameObject FindToolFromName(string toolName, string tag)
     {
-        // Init.
-        string toolItem = "";
-        List<GameObject> toolItemObjects = new List<GameObject> ();
-        GameObject[] tools = GameObject.FindGameObjectsWithTag (tag);
-        
-        // Find the tool object
-        GameObject toolobj = null;
-        foreach (GameObject tool in tools) {
-            if (tool.name == toolType)
-                toolobj = tool;
-        }
-        
-        // test if there is a child
-        Transform child =null;
-        for (int i = 0; i<6; i++) {
-            toolItem = toolType + "_" + (i+1);
-            child = toolobj.transform.FindChild (toolItem);
-            if(child==null)
-                continue;
-            else
-                break;
-        }
-        
-        // Calculate the name of the tool
-        for (int i = 0; i < 6; i++) {
-            toolItem = toolType + "_" + (i + 1);
-            Transform children = toolobj.transform.FindChild (toolItem);
-            if (children != null && (children.gameObject.tag == tag))
-                toolItemObjects.Add (children.gameObject);
-        }
-        
-        if (child == null) {
-            toolItemObjects.Add (toolobj);
-            return toolItemObjects;
-        }
-        return toolItemObjects;
-    }
 
-    //find the tool for the current task
-    public virtual GameObject[] FindTool(GameObject tool)
-    {
+        // Init.
+        string toolFullName = "";
+        List<GameObject> toolItemObjects = new List<GameObject>();
+
+        // Get all the tools from the defined tag
+        GameObject[] tools = GameObject.FindGameObjectsWithTag(tag);
+
+        // Find the tool object in the tag
+        foreach (GameObject tool in tools)
+        {
+            for (int i = 0; i<GlobalValues.MAXTOOLMUNBERINONETYPE; i++)
+            {
+                toolFullName = toolName + "_" + (i + 1);
+                if (tool.name == toolFullName)
+                {
+                    return tool;
+                }
+            }
+        }
         return null;
     }
 
-    public virtual bool PickUp()
+
+    /// <summary>
+    /// This function will play the pick up animation, attach the tool to the body/hand
+    /// And then the tool will have a owner.
+    /// </summary>
+    /// <returns><c>true</c>, if up was picked, <c>false</c> otherwise.</returns>
+    public bool PickUp(GameObject tool)
     {
-//        // TODO: to solve the one hand picking/two hands picking or multiperson picking here.
-//        // default pick up is using one hand(right hand) pick up
-//        // Pick up animation.
-//        int IsPickUp_id = Animator.StringToHash("IsPickUp");
-//        toolUserAnimator.SetBool(IsPickUp_id, true);
-//        // while animation is playing
-//        gameObject.transform.parent = toolUserAnimator.transform.Find("Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 R Clavicle/Bip01 R UpperArm/Bip01 R Forearm/Bip01 R Hand");
-//        gameObject.transform.localRotation = Quaternion.identity;
-//        gameObject.transform.localPosition = Vector3.zero;
-//        return true;
-//    
+        if (tool != null)
+        {
+            // init
+            toolsInHand.Add(tool);
+            selectedTool = tool;
+            selectedToolScript = tool.GetComponent<BaseToolScript>();
+
+            if (selectedToolScript.pickUpState == ToolStates.ToolPickUpStates.rightHand)
+            {
+
+                // control the animator controller
+                int IsPickUp_id = Animator.StringToHash("IsPickUp");
+                toolUserAnim.SetBool(IsPickUp_id, true);
+
+                // while animation is playing
+                tool.transform.parent = toolUserAnim.transform.Find("Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 R Clavicle/Bip01 R UpperArm/Bip01 R Forearm/Bip01 R Hand");
+                tool.transform.localRotation = Quaternion.identity;
+                tool.transform.localPosition = Vector3.zero;
+            }else if(selectedToolScript.pickUpState == ToolStates.ToolPickUpStates.doubleHands){
+                // TODO: deal with this later
+            }else if(selectedToolScript.pickUpState == ToolStates.ToolPickUpStates.doublePerson){
+                // TODO: deal with this later
+            }
+            return true;
+        } else
+            return false;
+
     }
 //    
     public virtual bool Use()
     {
-//        int IsStableSills_id = Animator.StringToHash("IsStableSills");
-//        toolUserAnimator.SetBool(IsStableSills_id, true);
-//        return true;
+        int IsStableSills_id = Animator.StringToHash("IsStableSills");
+        toolUserAnim.SetBool(IsStableSills_id, true);
+        return true;
     }
 
 }
