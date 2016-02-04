@@ -60,7 +60,7 @@ public class ToolController : MonoBehaviour
     /// InToolStageAreaTools and NotInToolStageAreaTools. This tag can also be a 
     /// parameter from primitive task.
     /// </param>
-    public GameObject FindToolFromName(string toolName, string tag)
+    public GameObject FindToolByName(string toolName, string tag)
     {
 
         // Init.
@@ -111,15 +111,37 @@ public class ToolController : MonoBehaviour
                 tool.transform.parent = toolUserAnim.transform.Find("Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 R Clavicle/Bip01 R UpperArm/Bip01 R Forearm/Bip01 R Hand");
                 tool.transform.localRotation = Quaternion.identity;
                 tool.transform.localPosition = Vector3.zero;
-            }else if(selectedToolScript.pickUpState == ToolStates.ToolPickUpStates.doubleHands){
+
+                //
+                if (toolUserAnim.GetCurrentAnimatorStateInfo(0).IsName("PickUp"))
+                {
+                    if (toolUserAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.7)
+                    {
+                        return false;
+                    } else
+                    {
+                        toolUserAnim.SetBool(IsPickUp_id, false);
+                        //hasTool = true;
+                        selectedTool.tag = "UsedTools";
+                        return true;
+                    }
+                } else
+                {
+                    return false;
+                }
+            } else if (selectedToolScript.pickUpState == ToolStates.ToolPickUpStates.doubleHands)
+            {
                 // TODO: deal with this later
-            }else if(selectedToolScript.pickUpState == ToolStates.ToolPickUpStates.doublePerson){
+            } else if (selectedToolScript.pickUpState == ToolStates.ToolPickUpStates.doublePerson)
+            {
                 // TODO: deal with this later
             }
             return true;
         } else
+        {
+            Debug.LogError("Tool is empty, cannot pick up!");
             return false;
-
+        }
     }
 //    
     public virtual bool Use()
