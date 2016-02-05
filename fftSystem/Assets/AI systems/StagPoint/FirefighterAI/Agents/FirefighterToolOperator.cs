@@ -23,6 +23,8 @@ public class FirefighterToolOperator : RescuerGeneral
 
     public ToolController toolController;
 
+    public BaseCrashedCarScript crashedCarScript;
+
 #region Blackboard vaiables
 
     [BlackboardVariable]
@@ -52,17 +54,17 @@ public class FirefighterToolOperator : RescuerGeneral
 
     [BlackboardVariable]
     [NonSerialized]
-    private int
+    public int
         StablePointSillsCounter;
 
     [BlackboardVariable]
     [NonSerialized]
-    private int
+    public int
         StablePointWheelsCounter;
 
     [BlackboardVariable]
     [NonSerialized]
-    private int
+    public int
         ToughGlassCount;
 
 
@@ -98,12 +100,12 @@ public class FirefighterToolOperator : RescuerGeneral
 
     [BlackboardVariable]
     [NonSerialized]
-    private GameObject
+    public GameObject
         CurrentStablePointSill;
 
     [BlackboardVariable]
     [NonSerialized]
-    private GameObject
+    public GameObject
         CurrentStablePointWheel;
 
     [BlackboardVariable]
@@ -127,6 +129,8 @@ public class FirefighterToolOperator : RescuerGeneral
     {
         if (toolController == null)
             toolController = GetComponent<ToolController>();
+        if (crashedCarScript == null && Car1 != null)
+            crashedCarScript = Car1.GetComponent<BaseCrashedCarScript>();
     }
 	
     // Update is called once per frame
@@ -134,22 +138,12 @@ public class FirefighterToolOperator : RescuerGeneral
     {
 
         Task = runningTask;
-        StablePointSillsCounter = Car1.GetComponent<CrashedCar>().StablePointSills.Count;
-        StablePointWheelsCounter = Car1.GetComponent<CrashedCar>().StablePointWheels.Count;
+        StablePointSillsCounter = crashedCarScript.StablePointSills.Count;
+        StablePointWheelsCounter = crashedCarScript.StablePointWheels.Count;
         if (StablePointSillsCounter > 0)
-            CurrentStablePointSill = Car1.GetComponent<CrashedCar>().StablePointSills.First<GameObject>();
+            CurrentStablePointSill = crashedCarScript.StablePointSills.First<GameObject>();
         if (StablePointWheelsCounter > 0)
-            CurrentStablePointWheel = Car1.GetComponent<CrashedCar>().StablePointWheels.First<GameObject>();
-//        if (runningTask == Tasks.StableSills)
-//        {
-//            TooltoFind = "StableTool_2";
-//        } else if (runningTask == Tasks.StableWheels)
-//        {
-//            TooltoFind = "StableTool_1";
-//        } else if (runningTask == Tasks.ManageGlass)
-//        {
-//            TooltoFind = "Klebebandabroller_1";
-//        }
+            CurrentStablePointWheel = crashedCarScript.StablePointWheels.First<GameObject>();
         taskSetter();
     }
 
@@ -471,9 +465,16 @@ public class FirefighterToolOperator : RescuerGeneral
             if (Tool != null)
             {
                 return TaskStatus.Succeeded;
+            } else
+            {
+                Debug.LogError("Cannot find tool in tool stage area.");
+                return TaskStatus.Failed;
             }
+        } else
+        {
+            Debug.LogError("ToolName is empty, cannot find an empty tool in tool stage area.");
+            return TaskStatus.Failed;
         }
-        return TaskStatus.Failed;
     }
 
     /// <summary>
@@ -506,96 +507,16 @@ public class FirefighterToolOperator : RescuerGeneral
     /// <returns>The tool.</returns>
     public IEnumerator UseTool([ScriptParameter] GameObject obj)
     {
-//        while (obj != null) {
-//            InteractableTool tool = obj.GetComponent<InteractableTool> ();
-//            tool.Initialize (gameObject, m_animator, new Vector3 (0, 0, 0));
-//            tool.ToolUse ();
-//            
-//            int IsStableSills_id = Animator.StringToHash ("IsStableSills");
-//            int IsStableWheels_id = Animator.StringToHash ("IsStableWheels");
-//            if (m_animator.GetCurrentAnimatorStateInfo (0).IsName ("Operate")) {
-//                if (this.m_animator.GetCurrentAnimatorStateInfo (0).normalizedTime < 0.7) {
-//                    yield return TaskStatus.Running;
-//                } else {
-//                    m_animator.SetBool (IsStableSills_id, false);
-//                    CurrentStablePointSill.renderer.enabled = true;
-//                    //obj.renderer.enabled = true;
-//                    Car1.GetComponent<CrashedCar> ().StablePointSills.Remove (CurrentStablePointSill);
-//                    yield return TaskStatus.Succeeded;
-//                }
-//            } else {
-//                yield return TaskStatus.Running;
-//            }
-//        }
-        // TODO: how to manage the tool more efficiently ...
-        if (obj.name == "StableTool_2_1")
+        while (obj != null)
         {
-
-            while (obj != null)
+            if (toolController.Use(obj))
             {
-                //GameObject obj=CurrentStablePointSill;
-                //Car1.GetComponent<CrashedCar> ().StablePointSills.Remove (CurrentStablePointSill);
-                // Using stable sills tool animation.
-                int IsStableSills_id = Animator.StringToHash("IsStableSills");
-                m_animator.SetBool(IsStableSills_id, true);
-                // After tool used... 
-                obj.renderer.enabled = false;
-
-			
-                if (m_animator.GetCurrentAnimatorStateInfo(0).IsName("Operate"))
-                {
-                    if (this.m_animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.7)
-                    {
-                        yield return TaskStatus.Running;
-                    } else
-                    {
-                        m_animator.SetBool(IsStableSills_id, false);
-                        CurrentStablePointSill.renderer.enabled = true;
-                        //obj.renderer.enabled = true;
-                        Car1.GetComponent<CrashedCar>().StablePointSills.Remove(CurrentStablePointSill);
-                        yield return TaskStatus.Succeeded;
-                    }
-                } else
-                {
-                    yield return TaskStatus.Running;
-                }
-            }
-        } else if (obj.name == "StableTool_1_1")
-        {
-            while (obj != null)
+                CurrentStablePointSill.renderer.enabled = true;
+                crashedCarScript.StablePointSills.Remove(CurrentStablePointSill);
+                yield return TaskStatus.Succeeded;
+            } else
             {
-                //GameObject obj=CurrentStablePointWheel;
-                //Car1.GetComponent<CrashedCar> ().StablePointWheels.Remove (CurrentStablePointWheel);
-
-                // Using stable sills tool animation.
-                int IsStableWheels_id = Animator.StringToHash("IsStableWheels");
-                m_animator.SetBool(IsStableWheels_id, true);
-                // After tool used...
-                obj.renderer.enabled = false;
-
-
-                if (m_animator.GetCurrentAnimatorStateInfo(0).IsName("Operate"))
-                {
-                    if (this.m_animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.7)
-                    {
-                        yield return TaskStatus.Running;
-                    } else
-                    {
-                        m_animator.SetBool(IsStableWheels_id, false);
-                        foreach (Transform child in CurrentStablePointWheel.transform)
-                        {
-                            child.renderer.enabled = true;
-                        }
-//						foreach (Transform child in obj.transform) {
-//							child.renderer.enabled = true;
-//						}
-                        Car1.GetComponent<CrashedCar>().StablePointWheels.Remove(CurrentStablePointWheel);
-                        yield return TaskStatus.Succeeded;
-                    }
-                } else
-                {
-                    yield return TaskStatus.Running;
-                }
+                yield return TaskStatus.Running;
             }
         }
         obj = null;
@@ -620,58 +541,6 @@ public class FirefighterToolOperator : RescuerGeneral
     }
 
 
-#endregion
-
-#region ToolHandling
-    /// <summary>
-    /// According to the type of the tool, and the tag information, this function can return an array of an object list that the firefighter will use.
-    /// </summary>
-    /// <returns>The exact tool from type.</returns>
-    /// <param name="toolType">Tool type.</param>
-    /// <param name="tag">Tag.</param>
-    public List<GameObject> findExactToolFromType(string toolType, string tag)
-    {
-        // Init.
-        string toolItem = "";
-        List<GameObject> toolItemObjects = new List<GameObject>();
-        GameObject[] tools = GameObject.FindGameObjectsWithTag(tag);
-
-        // Find the tool object
-        GameObject toolobj = null;
-        foreach (GameObject tool in tools)
-        {
-            if (tool.name == toolType)
-                toolobj = tool;
-        }
-
-        // test if there is a child
-        Transform child = null;
-        for (int i = 0; i<6; i++)
-        {
-            toolItem = toolType + "_" + (i + 1);
-            child = toolobj.transform.FindChild(toolItem);
-            if (child == null)
-                continue;
-            else
-                break;
-        }
-
-        // Calculate the name of the tool
-        for (int i = 0; i < 6; i++)
-        {
-            toolItem = toolType + "_" + (i + 1);
-            Transform children = toolobj.transform.FindChild(toolItem);
-            if (children != null && (children.gameObject.tag == tag))
-                toolItemObjects.Add(children.gameObject);
-        }
-
-        if (child == null)
-        {
-            toolItemObjects.Add(toolobj);
-            return toolItemObjects;
-        }
-        return toolItemObjects;
-    }
 #endregion
 
 #region Glass Management
