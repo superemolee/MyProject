@@ -77,10 +77,12 @@ public class ToolController : MonoBehaviour
                         // mark the tool as "it is waiting for me, other people please don't touch it"
                         tool.GetComponent<BaseToolScript>().ownerState = ToolStates.ToolOwnerStates.waitingForOwner;
                         return tool;
-                    }else if (tool.GetComponent<BaseToolScript>().ownerState == ToolStates.ToolOwnerStates.waitingForOwner){
+                    } else if (tool.GetComponent<BaseToolScript>().ownerState == ToolStates.ToolOwnerStates.waitingForOwner)
+                    {
                         Debug.LogError("Someone is going to use the tool, you have to wait!");
                         return null;
-                    }else{
+                    } else
+                    {
                         Debug.LogError("Someone already has the tool, you cannot use it!");
                         return null;
                     }
@@ -169,16 +171,15 @@ public class ToolController : MonoBehaviour
 
             if (toolUserAnim.GetCurrentAnimatorStateInfo(0).IsName("Operate"))
             {
-                if (toolUserAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.7)
+                if (toolUserAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.7f)
                 {
                     // still running
                     return false;
                 } else
                 {
                     toolUserAnim.SetBool(IsStableSills_id, false);
-                    toolUser.CurrentStablePointSill.renderer.enabled = true;
-//                    CurrentStablePointSill.renderer.enabled = true;
-//                    //obj.renderer.enabled = true;
+                    ToolActivate(toolUser.CurrentStablePointSill);
+//                    toolUser.CurrentStablePointSill.renderer.enabled = true;
                     toolUser.crashedCarScript.StablePointSills.Remove(toolUser.CurrentStablePointSill);
                     return true;
                 }
@@ -197,14 +198,15 @@ public class ToolController : MonoBehaviour
 
             if (toolUserAnim.GetCurrentAnimatorStateInfo(0).IsName("Operate"))
             {
-                if (toolUserAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.7)
+                if (toolUserAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.7f)
                 {
                     // still running
                     return false;
                 } else
                 {
                     toolUserAnim.SetBool(IsStableWheels_id, false);
-                    toolUser.CurrentStablePointWheel.renderer.enabled = true;
+                    ToolActivate(toolUser.CurrentStablePointWheel);
+                    //toolUser.CurrentStablePointWheel.renderer.enabled = true;
                     toolUser.crashedCarScript.StablePointWheels.Remove(toolUser.CurrentStablePointWheel);
                     return true;
                 }
@@ -214,4 +216,41 @@ public class ToolController : MonoBehaviour
         return false;
     }
 
+    /// <summary>
+    /// To deactivate the given tool.
+    /// </summary>
+    /// <param name="dTool">D tool.</param>
+    public void ToolDeactivate(GameObject dTool)
+    {
+        Renderer rend = dTool.GetComponent<Renderer>();
+        if (rend != null)
+            rend.enabled = false;
+        else
+        {
+            Renderer [] renderers = toolUser.CurrentStablePointWheel.GetComponentsInChildren<Renderer>();
+            foreach (Renderer r in renderers)
+            {
+                r.enabled = false;
+            }
+        }
+    }
+
+    /// <summary>
+    /// To activate the given tool.
+    /// </summary>
+    /// <param name="aTool">A tool.</param>
+    public void ToolActivate(GameObject aTool)
+    {
+        Renderer rend = aTool.GetComponent<Renderer>();
+        if (rend != null)
+            rend.enabled = true;
+        else
+        {
+            Renderer [] renderers = toolUser.CurrentStablePointWheel.GetComponentsInChildren<Renderer>();
+            foreach (Renderer r in renderers)
+            {
+                r.enabled = true;
+            }
+        }
+    }
 }

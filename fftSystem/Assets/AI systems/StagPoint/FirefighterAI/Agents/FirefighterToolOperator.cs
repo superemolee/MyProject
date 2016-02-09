@@ -511,8 +511,6 @@ public class FirefighterToolOperator : RescuerGeneral
         {
             if (toolController.Use(obj))
             {
-                CurrentStablePointSill.renderer.enabled = true;
-                crashedCarScript.StablePointSills.Remove(CurrentStablePointSill);
                 yield return TaskStatus.Succeeded;
             } else
             {
