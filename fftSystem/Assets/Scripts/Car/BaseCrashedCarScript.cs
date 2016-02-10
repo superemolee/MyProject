@@ -46,4 +46,11 @@ public class BaseCrashedCarScript : MonoBehaviour {
     void Update () {
 
     }
+
+    /// <summary>
+    /// Thif function calculate the tough glass that needs to be taped.
+    /// TODO: atm the taped glass is predefined.
+    /// </summary>
+    public void needTapedToughtGlass(){
+    }
 }

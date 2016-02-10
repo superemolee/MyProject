@@ -67,17 +67,6 @@ public class FirefighterToolOperator : RescuerGeneral
     public int
         ToughGlassCount;
 
-
-//	[BlackboardVariable]
-//	[NonSerialized]
-//	private VectorList
-//		StablePointSills;
-//	
-//	[BlackboardVariable]
-//	[NonSerialized]
-//	private VectorList
-//		StablePointWheels;
-
     [BlackboardVariable]
     [NonSerialized]
     private bool
@@ -93,11 +82,6 @@ public class FirefighterToolOperator : RescuerGeneral
     private GameObject
         Tool;
 
-//	[BlackboardVariable]
-//	[NonSerialized]
-//	private bool
-//		hasTool;
-
     [BlackboardVariable]
     [NonSerialized]
     public GameObject
@@ -107,6 +91,16 @@ public class FirefighterToolOperator : RescuerGeneral
     [NonSerialized]
     public GameObject
         CurrentStablePointWheel;
+
+    [BlackboardVariable]
+    [NonSerialized]
+    public GameObject
+        CurrentToughGlass;
+
+    [BlackboardVariable]
+    [NonSerialized]
+    public bool
+        isGlassNeedTape;
 
     [BlackboardVariable]
     [NonSerialized]
@@ -140,10 +134,19 @@ public class FirefighterToolOperator : RescuerGeneral
         Task = runningTask;
         StablePointSillsCounter = crashedCarScript.StablePointSills.Count;
         StablePointWheelsCounter = crashedCarScript.StablePointWheels.Count;
+        ToughGlassCount = crashedCarScript.ToughGlass.Count;
+       
         if (StablePointSillsCounter > 0)
             CurrentStablePointSill = crashedCarScript.StablePointSills.First<GameObject>();
         if (StablePointWheelsCounter > 0)
             CurrentStablePointWheel = crashedCarScript.StablePointWheels.First<GameObject>();
+        if(ToughGlassCount > 0 ){
+            CurrentToughGlass = crashedCarScript.ToughGlass.First<GameObject>();
+            if(CurrentToughGlass.transform.childCount > 0)
+                isGlassNeedTape = true;
+            else
+                isGlassNeedTape = false;
+        }
         taskSetter();
     }
 

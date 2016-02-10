@@ -212,6 +212,12 @@ public class ToolController : MonoBehaviour
                 }
             }
         }
+        else if (selectedToolScript.type == ToolStates.ToolType.TapeDispenser){
+//            if(selectedToolScript.)
+        }
+        else if(selectedToolScript.type == ToolStates.ToolType.SpringCenterPunch){
+
+        }
         //Debug.LogError("The tool is set as general, please set the tool as a specific purpose tool, e.g. stableSill.");
         return false;
     }
