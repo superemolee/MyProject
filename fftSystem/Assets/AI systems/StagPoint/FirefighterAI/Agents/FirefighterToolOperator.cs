@@ -126,6 +126,7 @@ public class FirefighterToolOperator : RescuerGeneral
         if (crashedCarScript == null && Car1 != null)
             crashedCarScript = Car1.GetComponent<BaseCrashedCarScript>();
     }
+
 	
     // Update is called once per frame
     void Update()
@@ -173,6 +174,9 @@ public class FirefighterToolOperator : RescuerGeneral
         TooltoFind = "";
 
         SpareLoc = transform.position;
+
+
+
         // Obtain a reference to the runtime Blackboard instance
         this.Blackboard = planner.RuntimeBlackboard;
 		

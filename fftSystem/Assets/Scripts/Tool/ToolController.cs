@@ -214,9 +214,11 @@ public class ToolController : MonoBehaviour
         }
         else if (selectedToolScript.type == ToolStates.ToolType.TapeDispenser){
 //            if(selectedToolScript.)
+            toolUser.crashedCarScript.ToughGlass.Remove(toolUser.CurrentToughGlass);
+
         }
         else if(selectedToolScript.type == ToolStates.ToolType.SpringCenterPunch){
-
+            toolUser.crashedCarScript.ToughGlass.Remove(toolUser.CurrentToughGlass);
         }
         //Debug.LogError("The tool is set as general, please set the tool as a specific purpose tool, e.g. stableSill.");
         return false;

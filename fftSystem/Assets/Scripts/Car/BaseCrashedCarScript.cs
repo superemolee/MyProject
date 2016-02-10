@@ -32,6 +32,8 @@ public class BaseCrashedCarScript : MonoBehaviour {
         foreach(GameObject obj in GameObject.FindGameObjectsWithTag(name + "ToughGlass")){
             ToughGlass.Add(obj);
         }
+
+
         
         // Init Check
         string str = "";
@@ -44,13 +46,21 @@ public class BaseCrashedCarScript : MonoBehaviour {
     
     // Update is called once per frame
     void Update () {
-
     }
 
     /// <summary>
     /// Thif function calculate the tough glass that needs to be taped.
-    /// TODO: atm the taped glass is predefined.
+    /// TODO: where to use it...
     /// </summary>
-    public void needTapedToughtGlass(){
+    public bool needTapedToughtGlass(){
+        if (ToughGlass != null)
+        {
+            foreach(GameObject rg in ToughGlass){
+                if(rg.transform.childCount > 0){
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }
