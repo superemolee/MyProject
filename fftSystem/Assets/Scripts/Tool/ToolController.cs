@@ -100,6 +100,7 @@ public class ToolController : MonoBehaviour
     /// <returns><c>true</c>, if up was picked, <c>false</c> otherwise.</returns>
     public virtual bool PickUp(GameObject tool)
     {
+        bool isToolPick = false;
         if (tool != null)
         {
             // init
@@ -114,24 +115,41 @@ public class ToolController : MonoBehaviour
                 int IsPickUp_id = Animator.StringToHash("IsPickUp");
                 toolUserAnim.SetBool(IsPickUp_id, true);
 
-                // while animation is playing
-                tool.transform.parent = toolUserAnim.transform.Find("Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 R Clavicle/Bip01 R UpperArm/Bip01 R Forearm/Bip01 R Hand");
-                tool.transform.localRotation = Quaternion.identity;
-                tool.transform.localPosition = Vector3.zero;
+//                // while animation is playing
+//                tool.transform.parent = toolUserAnim.transform.Find("Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 R Clavicle/Bip01 R UpperArm/Bip01 R Forearm/Bip01 R Hand");
+//                tool.transform.localRotation = Quaternion.identity;
+//                tool.transform.localPosition = Vector3.zero;
 
-                //
+//                StartCoroutine(PlayOneShot("IsPickUp"));
+//                return true;
+//                //
                 if (toolUserAnim.GetCurrentAnimatorStateInfo(0).IsName("PickUp"))
                 {
-                    if (toolUserAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.7)
+                    if (toolUserAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.5f)
                     {
-                        return false;
-                    } else
-                    {
-                        toolUserAnim.SetBool(IsPickUp_id, false);
-                        //hasTool = true;
-                        selectedToolScript.ownerState = ToolStates.ToolOwnerStates.hasOwner;
-                        return true;
+                        // while animation is playing
+                        tool.transform.parent = toolUserAnim.transform.Find("Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 R Clavicle/Bip01 R UpperArm/Bip01 R Forearm/Bip01 R Hand");
+                        tool.transform.localRotation = Quaternion.identity;
+                        tool.transform.localPosition = Vector3.zero;
+                        isToolPick = true;
                     }
+//                    // if the animation is played once continue
+//                    if (toolUserAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.7f)
+//                    {
+//                        // running
+//                        return false;
+//                    } else
+//                    {
+//                        toolUserAnim.SetBool(IsPickUp_id, false);
+//                        selectedToolScript.ownerState = ToolStates.ToolOwnerStates.hasOwner;
+//                        return true;
+//                    }
+                    if(isToolPick){
+                                                toolUserAnim.SetBool(IsPickUp_id, false);
+                                                selectedToolScript.ownerState = ToolStates.ToolOwnerStates.hasOwner;
+                                                return true;
+                    }else 
+                        return false;
                 } else
                 {
                     return false;
@@ -211,8 +229,8 @@ public class ToolController : MonoBehaviour
                     return true;
                 }
             }
-        }
-        else if (selectedToolScript.type == ToolStates.ToolType.TapeDispenser){
+        } else if (selectedToolScript.type == ToolStates.ToolType.TapeDispenser)
+        {
 
             // animate
             int IsCenterPunch_id = Animator.StringToHash("IsCenterPunch");
@@ -235,8 +253,8 @@ public class ToolController : MonoBehaviour
                 }
             }
 
-        }
-        else if(selectedToolScript.type == ToolStates.ToolType.SpringCenterPunch){
+        } else if (selectedToolScript.type == ToolStates.ToolType.SpringCenterPunch)
+        {
             // animate
             int IsTape_id = Animator.StringToHash("IsTape");
             toolUserAnim.SetBool(IsTape_id, true);
@@ -300,4 +318,13 @@ public class ToolController : MonoBehaviour
             }
         }
     }
+
+    public IEnumerator PlayOneShot(string paramName)
+    {
+        toolUserAnim.SetBool(paramName, true);
+        yield return null;
+        toolUserAnim.SetBool(paramName, false);
+    }
+
+
 }

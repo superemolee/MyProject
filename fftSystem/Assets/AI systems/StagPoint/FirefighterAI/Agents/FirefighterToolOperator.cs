@@ -490,21 +490,30 @@ public class FirefighterToolOperator : RescuerGeneral
     /// </summary>
     /// <returns>The up.</returns>
     /// <param name="obj">Object.</param>
-    public IEnumerator PickUp([ScriptParameter] GameObject obj)
+//    public IEnumerator PickUp([ScriptParameter] GameObject obj)
+    public TaskStatus PickUp([ScriptParameter] GameObject obj)
     {
-        while (obj != null)
+        if (!toolController.PickUp(obj))
         {
-            if (!toolController.PickUp(obj))
-            {
-                yield return TaskStatus.Running;
-            } else
-            {
-                yield return TaskStatus.Succeeded;
-            }
-        }
-        obj = null;
-        yield return TaskStatus.Failed;
+            return TaskStatus.Running;
+        } else 
+            return TaskStatus.Succeeded;
+        return TaskStatus.Failed;
+//        while (obj != null)
+//        {
+//            if (!toolController.PickUp(obj))
+//            {
+//                yield return TaskStatus.Running;
+//            } else
+//            {
+//                yield return TaskStatus.Succeeded;
+//            }
+//        }
+//        obj = null;
+//        yield return TaskStatus.Failed;
     }
+
+
 
     /// <summary>
     /// This methods is to implement a way of using all kinds of tools for stabilizing vehicle, manage glasses, space creation and rescue casualty.
