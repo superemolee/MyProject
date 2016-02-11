@@ -213,12 +213,51 @@ public class ToolController : MonoBehaviour
             }
         }
         else if (selectedToolScript.type == ToolStates.ToolType.TapeDispenser){
-//            if(selectedToolScript.)
-            toolUser.crashedCarScript.ToughGlass.Remove(toolUser.CurrentToughGlass);
+
+            // animate
+            int IsCenterPunch_id = Animator.StringToHash("IsCenterPunch");
+            toolUserAnim.SetBool(IsCenterPunch_id, true);
+
+            if (toolUserAnim.GetCurrentAnimatorStateInfo(0).IsName("CenterPunch"))
+            {
+                if (toolUserAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.7f)
+                {
+                    // still running
+                    return false;
+                } else
+                {
+                    toolUserAnim.SetBool(IsCenterPunch_id, false);
+
+                    // TODO .manage glass
+                   
+                   
+                    return true;
+                }
+            }
 
         }
         else if(selectedToolScript.type == ToolStates.ToolType.SpringCenterPunch){
-            toolUser.crashedCarScript.ToughGlass.Remove(toolUser.CurrentToughGlass);
+            // animate
+            int IsTape_id = Animator.StringToHash("IsTape");
+            toolUserAnim.SetBool(IsTape_id, true);
+            
+            if (toolUserAnim.GetCurrentAnimatorStateInfo(0).IsName("Tape"))
+            {
+                if (toolUserAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.7f)
+                {
+                    // still running
+                    return false;
+                } else
+                {
+                    toolUserAnim.SetBool(IsTape_id, false);
+                    
+                    // TODO .manage glass
+
+                    toolUser.crashedCarScript.ToughGlass.Remove(toolUser.CurrentToughGlass);
+                    return true;
+                }
+            }
+
         }
         //Debug.LogError("The tool is set as general, please set the tool as a specific purpose tool, e.g. stableSill.");
         return false;
