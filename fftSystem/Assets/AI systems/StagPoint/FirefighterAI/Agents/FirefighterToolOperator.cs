@@ -521,11 +521,11 @@ public class FirefighterToolOperator : RescuerGeneral
     /// Question: How details I need to implement to operate a tool? 
     /// </summary>
     /// <returns>The tool.</returns>
-    public IEnumerator UseTool([ScriptParameter] GameObject obj)
+    public IEnumerator UseTool([ScriptParameter] Firefighter.ToolStates.ToolType toolType)
     {
-        while (obj != null)
+        while (toolType !=  Firefighter.ToolStates.ToolType.General)
         {
-            if (toolController.Use(obj))
+            if (toolController.Use(toolType))
             {
                 yield return TaskStatus.Succeeded;
             } else
@@ -533,7 +533,7 @@ public class FirefighterToolOperator : RescuerGeneral
                 yield return TaskStatus.Running;
             }
         }
-        obj = null;
+        toolType = Firefighter.ToolStates.ToolType.General;
         yield return TaskStatus.Failed;
 		
     }

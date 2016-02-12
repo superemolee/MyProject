@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic; // Needed to use Generic lists
 
-using ToolStates; // include the tool states
+using Firefighter.ToolStates; // include the tool states
 
 public class BaseToolScript : MonoBehaviour
 {

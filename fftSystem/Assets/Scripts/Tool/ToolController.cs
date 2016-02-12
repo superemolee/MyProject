@@ -72,12 +72,12 @@ public class ToolController : MonoBehaviour
                 toolFullName = toolName + "_" + (i + 1);
                 if (tool.name == toolFullName)
                 {
-                    if (tool.GetComponent<BaseToolScript>().ownerState == ToolStates.ToolOwnerStates.noOwner)
+                    if (tool.GetComponent<BaseToolScript>().ownerState == Firefighter.ToolStates.ToolOwnerStates.noOwner)
                     {
                         // mark the tool as "it is waiting for me, other people please don't touch it"
-                        tool.GetComponent<BaseToolScript>().ownerState = ToolStates.ToolOwnerStates.waitingForOwner;
+                        tool.GetComponent<BaseToolScript>().ownerState = Firefighter.ToolStates.ToolOwnerStates.waitingForOwner;
                         return tool;
-                    } else if (tool.GetComponent<BaseToolScript>().ownerState == ToolStates.ToolOwnerStates.waitingForOwner)
+                    } else if (tool.GetComponent<BaseToolScript>().ownerState == Firefighter.ToolStates.ToolOwnerStates.waitingForOwner)
                     {
                         Debug.LogError("Someone is going to use the tool, you have to wait!");
                         return null;
@@ -108,7 +108,7 @@ public class ToolController : MonoBehaviour
             selectedTool = tool;
             selectedToolScript = tool.GetComponent<BaseToolScript>();
 
-            if (selectedToolScript.pickUpState == ToolStates.ToolPickUpStates.rightHand)
+            if (selectedToolScript.pickUpState == Firefighter.ToolStates.ToolPickUpStates.rightHand)
             {
 
                 // control the animator controller
@@ -144,20 +144,21 @@ public class ToolController : MonoBehaviour
 //                        selectedToolScript.ownerState = ToolStates.ToolOwnerStates.hasOwner;
 //                        return true;
 //                    }
-                    if(isToolPick){
-                                                toolUserAnim.SetBool(IsPickUp_id, false);
-                                                selectedToolScript.ownerState = ToolStates.ToolOwnerStates.hasOwner;
-                                                return true;
-                    }else 
+                    if (isToolPick)
+                    {
+                        toolUserAnim.SetBool(IsPickUp_id, false);
+                        selectedToolScript.ownerState = Firefighter.ToolStates.ToolOwnerStates.hasOwner;
+                        return true;
+                    } else 
                         return false;
                 } else
                 {
                     return false;
                 }
-            } else if (selectedToolScript.pickUpState == ToolStates.ToolPickUpStates.doubleHands)
+            } else if (selectedToolScript.pickUpState == Firefighter.ToolStates.ToolPickUpStates.doubleHands)
             {
                 // TODO: deal with this later
-            } else if (selectedToolScript.pickUpState == ToolStates.ToolPickUpStates.doublePerson)
+            } else if (selectedToolScript.pickUpState == Firefighter.ToolStates.ToolPickUpStates.doublePerson)
             {
                 // TODO: deal with this later
             }
@@ -172,13 +173,12 @@ public class ToolController : MonoBehaviour
     /// <summary>
     /// Use this instance.
     /// </summary>
-    public virtual bool Use(GameObject tool)
+    public virtual bool Use(Firefighter.ToolStates.ToolType toolType)
     {
-        selectedTool = tool;
-        selectedToolScript = tool.GetComponent<BaseToolScript>();
+        ChooseCorrectToolToUse(toolType);
        
         // if use tool to stable sill
-        if (selectedToolScript.type == ToolStates.ToolType.StableSill)
+        if (toolType == Firefighter.ToolStates.ToolType.StableSill)
         {
             // animate
             int IsStableSills_id = Animator.StringToHash("IsStableSills");
@@ -205,7 +205,7 @@ public class ToolController : MonoBehaviour
 
         }
         // if use tool to stalble wheel
-        else if (selectedToolScript.type == ToolStates.ToolType.StableWheel)
+        else if (toolType == Firefighter.ToolStates.ToolType.StableWheel)
         {
             // animate
             int IsStableWheels_id = Animator.StringToHash("IsStableWheels");
@@ -229,7 +229,7 @@ public class ToolController : MonoBehaviour
                     return true;
                 }
             }
-        } else if (selectedToolScript.type == ToolStates.ToolType.TapeDispenser)
+        } else if (toolType == Firefighter.ToolStates.ToolType.TapeDispenser)
         {
 
             // animate
@@ -247,13 +247,13 @@ public class ToolController : MonoBehaviour
                     toolUserAnim.SetBool(IsCenterPunch_id, false);
 
                     // TODO .manage glass
-                   
+                    
                    
                     return true;
                 }
             }
 
-        } else if (selectedToolScript.type == ToolStates.ToolType.SpringCenterPunch)
+        } else if (toolType == Firefighter.ToolStates.ToolType.SpringCenterPunch)
         {
             // animate
             int IsTape_id = Animator.StringToHash("IsTape");
@@ -270,7 +270,9 @@ public class ToolController : MonoBehaviour
                     toolUserAnim.SetBool(IsTape_id, false);
                     
                     // TODO .manage glass
-
+                    // currently delete
+                    //ToolDeactivate(toolUser.CurrentToughGlass);
+                    toolUser.CurrentToughGlass.GetComponent<CrashedCarGlassController>().assignTexture();
                     toolUser.crashedCarScript.ToughGlass.Remove(toolUser.CurrentToughGlass);
                     return true;
                 }
@@ -279,6 +281,19 @@ public class ToolController : MonoBehaviour
         }
         //Debug.LogError("The tool is set as general, please set the tool as a specific purpose tool, e.g. stableSill.");
         return false;
+    }
+
+    
+    public void ChooseCorrectToolToUse(Firefighter.ToolStates.ToolType toolT)
+    {
+        foreach (GameObject tool in toolsInHand)
+        {
+            if (tool.GetComponent<BaseToolScript>().type == toolT)
+            {
+                selectedTool = tool;
+                selectedToolScript = tool.GetComponent<BaseToolScript>();
+            }
+        }
     }
 
     /// <summary>
@@ -300,6 +315,7 @@ public class ToolController : MonoBehaviour
         }
     }
 
+
     /// <summary>
     /// To activate the given tool.
     /// </summary>
@@ -319,6 +335,11 @@ public class ToolController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// used for play an animation once.
+    /// </summary>
+    /// <returns>The one shot.</returns>
+    /// <param name="paramName">Parameter name.</param>
     public IEnumerator PlayOneShot(string paramName)
     {
         toolUserAnim.SetBool(paramName, true);

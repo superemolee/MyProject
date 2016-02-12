@@ -1,4 +1,11 @@
-﻿namespace ToolStates
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+using UnityEngine;
+
+namespace Firefighter.ToolStates
 {
 
     // this enum track the state whether the tool is in use
@@ -26,6 +33,7 @@
     }
 
     // mark the type of the tool ... TODO: add all
+    [Serializable]
     public enum ToolType{
         General,
         StableWheel,
