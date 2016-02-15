@@ -6,12 +6,19 @@ public class CrashedCarGlassController : MonoBehaviour
 
     public Material myMats;
     public Texture2D myTexture;
-    public Shader myShader = Shader.Find("Transparent/Diffuse");
+    public Shader myShader;
     public Color32 myColor;
 
-    public bool isManaged = false;
-    public bool isTaped = false;
-    
+    public bool isManaged;
+    public bool isTaped;
+
+
+    void Awake(){
+        myShader = Shader.Find("Transparent/Diffuse");
+        isManaged = false;
+        isTaped = false;
+    }
+
     // Use this for initialization
     void Start()
     {
@@ -25,7 +32,8 @@ public class CrashedCarGlassController : MonoBehaviour
         {
             gameObject.renderer.material.mainTexture = myTexture;
         }
-        assignColor();
+        myColor = new Color32(0, 0, 0, 102);
+        myMats.color = myColor;
     }
     
     // Update is called once per frame
