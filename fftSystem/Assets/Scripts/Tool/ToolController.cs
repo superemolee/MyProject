@@ -54,7 +54,7 @@ public class ToolController : MonoBehaviour
     /// InToolStageAreaTools and NotInToolStageAreaTools. This tag can also be a 
     /// parameter from primitive task.
     /// </param>
-    public GameObject FindToolByName(string toolName, string tag)
+    public GameObject FindToolByNameAndTag(string toolName, string tag)
     {
 
         // Init.
@@ -96,59 +96,50 @@ public class ToolController : MonoBehaviour
     /// <summary>
     /// This function will play the pick up animation, attach the tool to the body/hand
     /// And then the tool will have a owner.
+    /// return false: keep running
+    /// return true: succeed
     /// </summary>
     /// <returns><c>true</c>, if up was picked, <c>false</c> otherwise.</returns>
     public virtual bool PickUp(GameObject tool)
     {
-        bool isToolPick = false;
         if (tool != null)
         {
             // init
-            toolsInHand.Add(tool);
-            selectedTool = tool;
-            selectedToolScript = tool.GetComponent<BaseToolScript>();
-
+            if (!toolsInHand.Contains(tool))
+            {
+                toolsInHand.Add(tool);
+                selectedTool = tool;
+                selectedToolScript = tool.GetComponent<BaseToolScript>();
+            }
             if (selectedToolScript.pickUpState == Firefighter.ToolStates.ToolPickUpStates.rightHand)
             {
+                // when the animation is played and the object is picked
+                if (!toolUserAnim.GetCurrentAnimatorStateInfo(0).IsName("PickUp") &&
+                    tool.transform.parent == toolUserAnim.transform.Find("Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 R Clavicle/Bip01 R UpperArm/Bip01 R Forearm/Bip01 R Hand"))
+                {
+                    // succeed
+                    return true;
+                }
 
-                // control the animator controller
                 int IsPickUp_id = Animator.StringToHash("IsPickUp");
-                toolUserAnim.SetBool(IsPickUp_id, true);
+                // control the animator controller
+                if (tool.transform.parent != toolUserAnim.transform.Find("Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 R Clavicle/Bip01 R UpperArm/Bip01 R Forearm/Bip01 R Hand"))
+                {
+                    toolUserAnim.SetBool(IsPickUp_id, true);
+                }
 
-//                // while animation is playing
-//                tool.transform.parent = toolUserAnim.transform.Find("Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 R Clavicle/Bip01 R UpperArm/Bip01 R Forearm/Bip01 R Hand");
-//                tool.transform.localRotation = Quaternion.identity;
-//                tool.transform.localPosition = Vector3.zero;
-
-//                StartCoroutine(PlayOneShot("IsPickUp"));
-//                return true;
-//                //
+                // when pick up animation is playing
                 if (toolUserAnim.GetCurrentAnimatorStateInfo(0).IsName("PickUp"))
                 {
+                    // when animation played at 0.5, estimated that it is about to attach
                     if (toolUserAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.5f)
                     {
-                        // while animation is playing
+                        // attach the object to the hand
                         tool.transform.parent = toolUserAnim.transform.Find("Bip01/Bip01 Pelvis/Bip01 Spine/Bip01 Spine1/Bip01 Spine2/Bip01 R Clavicle/Bip01 R UpperArm/Bip01 R Forearm/Bip01 R Hand");
                         tool.transform.localRotation = Quaternion.identity;
                         tool.transform.localPosition = Vector3.zero;
-                        isToolPick = true;
-                    }
-//                    // if the animation is played once continue
-//                    if (toolUserAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.7f)
-//                    {
-//                        // running
-//                        return false;
-//                    } else
-//                    {
-//                        toolUserAnim.SetBool(IsPickUp_id, false);
-//                        selectedToolScript.ownerState = ToolStates.ToolOwnerStates.hasOwner;
-//                        return true;
-//                    }
-                    if (isToolPick)
-                    {
                         toolUserAnim.SetBool(IsPickUp_id, false);
                         selectedToolScript.ownerState = Firefighter.ToolStates.ToolOwnerStates.hasOwner;
-                        return true;
                     } else 
                         return false;
                 } else
@@ -162,7 +153,7 @@ public class ToolController : MonoBehaviour
             {
                 // TODO: deal with this later
             }
-            return true;
+            return false;
         } else
         {
             Debug.LogError("Tool is empty, cannot pick up!");
@@ -173,109 +164,135 @@ public class ToolController : MonoBehaviour
     /// <summary>
     /// Use this instance.
     /// </summary>
-    public virtual bool Use(Firefighter.ToolStates.ToolType toolType)
+    public virtual bool Use(string toolName)
     {
-        ChooseCorrectToolToUse(toolType);
-       
-        // if use tool to stable sill
-        if (toolType == Firefighter.ToolStates.ToolType.StableSill)
+        if (ChooseCorrectToolToUse(toolName))
         {
-            // animate
-            int IsStableSills_id = Animator.StringToHash("IsStableSills");
-            toolUserAnim.SetBool(IsStableSills_id, true);
-
-            // after using the tool
-            selectedTool.renderer.enabled = false;
-
-            if (toolUserAnim.GetCurrentAnimatorStateInfo(0).IsName("Operate"))
+            // if use tool to stable sill
+            if (selectedToolScript.type == Firefighter.ToolStates.ToolType.StableSill)
             {
-                if (toolUserAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.7f)
+                // animate
+                int IsStableSills_id = Animator.StringToHash("IsStableSills");
+                toolUserAnim.SetBool(IsStableSills_id, true);
+
+                // after using the tool
+                selectedTool.renderer.enabled = false;
+
+                if (toolUserAnim.GetCurrentAnimatorStateInfo(0).IsName("Operate"))
                 {
-                    // still running
-                    return false;
-                } else
-                {
-                    toolUserAnim.SetBool(IsStableSills_id, false);
-                    ToolActivate(toolUser.CurrentStablePointSill);
+                    if (toolUserAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.7f)
+                    {
+                        // still running
+                        return false;
+                    } else
+                    {
+                        toolUserAnim.SetBool(IsStableSills_id, false);
+                        ToolActivate(toolUser.CurrentStablePointSill);
 //                    toolUser.CurrentStablePointSill.renderer.enabled = true;
-                    toolUser.crashedCarScript.StablePointSills.Remove(toolUser.CurrentStablePointSill);
-                    return true;
+                        toolUser.crashedCarScript.StablePointSills.Remove(toolUser.CurrentStablePointSill);
+                        return true;
+                    }
                 }
-            }
 
-        }
+            }
         // if use tool to stalble wheel
-        else if (toolType == Firefighter.ToolStates.ToolType.StableWheel)
-        {
-            // animate
-            int IsStableWheels_id = Animator.StringToHash("IsStableWheels");
-            toolUserAnim.SetBool(IsStableWheels_id, true);
-
-            // after using the tool
-            selectedTool.renderer.enabled = false;
-
-            if (toolUserAnim.GetCurrentAnimatorStateInfo(0).IsName("Operate"))
+            else if (selectedToolScript.type == Firefighter.ToolStates.ToolType.StableWheel)
             {
-                if (toolUserAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.7f)
+                // animate
+                int IsStableWheels_id = Animator.StringToHash("IsStableWheels");
+                toolUserAnim.SetBool(IsStableWheels_id, true);
+
+                // after using the tool
+                selectedTool.renderer.enabled = false;
+
+                if (toolUserAnim.GetCurrentAnimatorStateInfo(0).IsName("Operate"))
                 {
-                    // still running
-                    return false;
-                } else
+                    if (toolUserAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.7f)
+                    {
+                        // still running
+                        return false;
+                    } else
+                    {
+                        toolUserAnim.SetBool(IsStableWheels_id, false);
+                        ToolActivate(toolUser.CurrentStablePointWheel);
+                        //toolUser.CurrentStablePointWheel.renderer.enabled = true;
+                        toolUser.crashedCarScript.StablePointWheels.Remove(toolUser.CurrentStablePointWheel);
+                        return true;
+                    }
+                }
+            } else if (selectedToolScript.type == Firefighter.ToolStates.ToolType.TapeDispenser)
+            {
+                // animate
+                int IsTape_id = Animator.StringToHash("IsTape");
+               
+
+                
+                if (!toolUserAnim.GetCurrentAnimatorStateInfo(0).IsName("Tape") &&
+                    toolUser.CurrentToughGlass.GetComponent<CrashedCarGlassController>().isTaped)
                 {
-                    toolUserAnim.SetBool(IsStableWheels_id, false);
-                    ToolActivate(toolUser.CurrentStablePointWheel);
-                    //toolUser.CurrentStablePointWheel.renderer.enabled = true;
-                    toolUser.crashedCarScript.StablePointWheels.Remove(toolUser.CurrentStablePointWheel);
                     return true;
                 }
-            }
-        } else if (toolType == Firefighter.ToolStates.ToolType.TapeDispenser)
-        {
 
-            // animate
-            int IsCenterPunch_id = Animator.StringToHash("IsCenterPunch");
-            toolUserAnim.SetBool(IsCenterPunch_id, true);
-
-            if (toolUserAnim.GetCurrentAnimatorStateInfo(0).IsName("CenterPunch"))
-            {
-                if (toolUserAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.7f)
+                if (!toolUser.CurrentToughGlass.GetComponent<CrashedCarGlassController>().isTaped)
                 {
-                    // still running
+                    toolUserAnim.SetBool(IsTape_id, true);
+                }
+
+                if (toolUserAnim.GetCurrentAnimatorStateInfo(0).IsName("Tape"))
+                {
+                    if (toolUserAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f)
+                    {
+                        toolUserAnim.SetBool(IsTape_id, false);
+                        // TODO .tape
+                        ToolActivate(toolUser.CurrentToughGlass);
+                        toolUser.CurrentToughGlass.GetComponent<CrashedCarGlassController>().isTaped = true;
+                    }
+
                     return false;
-                } else
-                {
-                    toolUserAnim.SetBool(IsCenterPunch_id, false);
-
-                    // TODO .manage glass
-                    
                    
-                    return true;
                 }
-            }
 
-        } else if (toolType == Firefighter.ToolStates.ToolType.SpringCenterPunch)
-        {
-            // animate
-            int IsTape_id = Animator.StringToHash("IsTape");
-            toolUserAnim.SetBool(IsTape_id, true);
-            
-            if (toolUserAnim.GetCurrentAnimatorStateInfo(0).IsName("Tape"))
+            } else if (selectedToolScript.type == Firefighter.ToolStates.ToolType.SpringCenterPunch)
             {
-                if (toolUserAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.7f)
+                // animate
+                int IsCenterPunch_id = Animator.StringToHash("IsCenterPunch");
+
+
+
+
+                if (!toolUserAnim.GetCurrentAnimatorStateInfo(0).IsName("CenterPunch") &&
+                    toolUser.CurrentToughGlass.GetComponent<CrashedCarGlassController>().isManaged)
                 {
-                    // still running
-                    return false;
-                } else
-                {
-                    toolUserAnim.SetBool(IsTape_id, false);
-                    
-                    // TODO .manage glass
-                    // currently delete
-                    //ToolDeactivate(toolUser.CurrentToughGlass);
-                    toolUser.CurrentToughGlass.GetComponent<CrashedCarGlassController>().assignTexture();
                     toolUser.crashedCarScript.ToughGlass.Remove(toolUser.CurrentToughGlass);
                     return true;
                 }
+                if (!toolUser.CurrentToughGlass.GetComponent<CrashedCarGlassController>().isManaged)
+                {
+                    toolUserAnim.SetBool(IsCenterPunch_id, true);
+                }
+            
+                if (toolUserAnim.GetCurrentAnimatorStateInfo(0).IsName("CenterPunch"))
+                {
+//                    if (toolUserAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.7f)
+//                    {
+//                        // still running
+//                        return false;
+//                    } else
+                    if (toolUserAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f)
+                    {
+                        toolUserAnim.SetBool(IsCenterPunch_id, false);
+                    
+                        // TODO .manage glass
+                        // currently delete
+                        //ToolDeactivate(toolUser.CurrentToughGlass);
+                        toolUser.CurrentToughGlass.GetComponent<CrashedCarGlassController>().assignTexture();
+                        toolUser.CurrentToughGlass.GetComponent<CrashedCarGlassController>().isManaged = true;
+
+                        //return true;
+                    }
+                    return false;
+                }
+
             }
 
         }
@@ -284,16 +301,23 @@ public class ToolController : MonoBehaviour
     }
 
     
-    public void ChooseCorrectToolToUse(Firefighter.ToolStates.ToolType toolT)
+    public bool ChooseCorrectToolToUse(string toolName)
     {
         foreach (GameObject tool in toolsInHand)
         {
-            if (tool.GetComponent<BaseToolScript>().type == toolT)
+            string fullToolName = "";
+            for (int i = 0; i<GlobalValues.MAXTOOLMUNBERINONETYPE; i++)
             {
-                selectedTool = tool;
-                selectedToolScript = tool.GetComponent<BaseToolScript>();
+                fullToolName = toolName + "_" + (i + 1);
+                if (tool.name == fullToolName)
+                {
+                    selectedTool = tool;
+                    selectedToolScript = tool.GetComponent<BaseToolScript>();
+                    return true;
+                }
             }
         }
+        return false;
     }
 
     /// <summary>
@@ -325,9 +349,9 @@ public class ToolController : MonoBehaviour
         Renderer rend = aTool.GetComponent<Renderer>();
         if (rend != null)
             rend.enabled = true;
-        else
+        Renderer [] renderers = aTool.GetComponentsInChildren<Renderer>();
+        if (renderers.Length > 0)
         {
-            Renderer [] renderers = toolUser.CurrentStablePointWheel.GetComponentsInChildren<Renderer>();
             foreach (Renderer r in renderers)
             {
                 r.enabled = true;

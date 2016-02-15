@@ -468,7 +468,7 @@ public class FirefighterToolOperator : RescuerGeneral
         // In the end, we find the tools in the tag pool
         if (toolName != "")
         {
-            Tool = toolController.FindToolByName(toolName, "InToolStageAreaTools");
+            Tool = toolController.FindToolByNameAndTag(toolName, "InToolStageAreaTools");
             if (Tool != null)
             {
                 return TaskStatus.Succeeded;
@@ -521,11 +521,12 @@ public class FirefighterToolOperator : RescuerGeneral
     /// Question: How details I need to implement to operate a tool? 
     /// </summary>
     /// <returns>The tool.</returns>
-    public IEnumerator UseTool([ScriptParameter] Firefighter.ToolStates.ToolType toolType)
+    public IEnumerator UseTool([ScriptParameter]string toolName)
     {
-        while (toolType !=  Firefighter.ToolStates.ToolType.General)
+
+        while (toolName!="")
         {
-            if (toolController.Use(toolType))
+            if (toolController.Use(toolName))
             {
                 yield return TaskStatus.Succeeded;
             } else
@@ -533,7 +534,7 @@ public class FirefighterToolOperator : RescuerGeneral
                 yield return TaskStatus.Running;
             }
         }
-        toolType = Firefighter.ToolStates.ToolType.General;
+        toolName = "";
         yield return TaskStatus.Failed;
 		
     }

@@ -49,14 +49,14 @@ public class BaseCrashedCarScript : MonoBehaviour {
     }
 
     /// <summary>
-    /// Thif function calculate the tough glass that needs to be taped.
+    /// This function calculate the tough glass that needs to be taped.
     /// TODO: where to use it...
     /// </summary>
-    public bool needTapedToughtGlass(){
+    public bool needTapedToughtGlass(GameObject isTapeToughGlass){
         if (ToughGlass != null)
         {
-            foreach(GameObject rg in ToughGlass){
-                if(rg.transform.childCount > 0){
+            if(ToughGlass.Contains(isTapeToughGlass)){
+                if(isTapeToughGlass.transform.childCount > 0){
                     return true;
                 }
             }

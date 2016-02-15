@@ -8,6 +8,9 @@ public class CrashedCarGlassController : MonoBehaviour
     public Texture2D myTexture;
     public Shader myShader = Shader.Find("Transparent/Diffuse");
     public Color32 myColor;
+
+    public bool isManaged = false;
+    public bool isTaped = false;
     
     // Use this for initialization
     void Start()
