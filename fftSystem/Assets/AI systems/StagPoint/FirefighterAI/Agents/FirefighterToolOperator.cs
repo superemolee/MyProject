@@ -36,7 +36,17 @@ public class FirefighterToolOperator : RescuerGeneral
     [NonSerialized]
     private GameObject
         Car2;
+
+    [BlackboardVariable]
+    [NonSerialized]
+    private GameObject
+        LaminateGlassLeft;
 	
+    [BlackboardVariable]
+    [NonSerialized]
+    private GameObject
+        LaminateGlassRight;
+
     [BlackboardVariable]
     [NonSerialized]
     private Vector3
@@ -125,6 +135,11 @@ public class FirefighterToolOperator : RescuerGeneral
             toolController = GetComponent<ToolController>();
         if (crashedCarScript == null && Car1 != null)
             crashedCarScript = Car1.GetComponent<BaseCrashedCarScript>();
+        if(Car1!=null){
+            LaminateGlassLeft = GameObject.Find("Car1/LaminateGlass/Left");
+            LaminateGlassRight = GameObject.Find("Car1/LaminateGlass/Right");
+        }
+
     }
 
 	
@@ -144,7 +159,12 @@ public class FirefighterToolOperator : RescuerGeneral
         if(ToughGlassCount > 0 ){
             CurrentToughGlass = crashedCarScript.ToughGlass.First<GameObject>();
             if(CurrentToughGlass.transform.childCount > 0)
-                isGlassNeedTape = true;
+            {
+                if(!CurrentToughGlass.GetComponent<CrashedCarGlassController>().isTaped)
+                    isGlassNeedTape = true;
+                else
+                    isGlassNeedTape = false;
+            }
             else
                 isGlassNeedTape = false;
         }

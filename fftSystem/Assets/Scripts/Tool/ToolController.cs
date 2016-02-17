@@ -225,11 +225,11 @@ public class ToolController : MonoBehaviour
                 // animate
                 int IsTape_id = Animator.StringToHash("IsTape");
                
-
                 
                 if (!toolUserAnim.GetCurrentAnimatorStateInfo(0).IsName("Tape") &&
                     toolUser.CurrentToughGlass.GetComponent<CrashedCarGlassController>().isTaped)
                 {
+                    toolUser.isGlassNeedTape = false;
                     return true;
                 }
 
@@ -257,9 +257,6 @@ public class ToolController : MonoBehaviour
                 // animate
                 int IsCenterPunch_id = Animator.StringToHash("IsCenterPunch");
 
-
-
-
                 if (!toolUserAnim.GetCurrentAnimatorStateInfo(0).IsName("CenterPunch") &&
                     toolUser.CurrentToughGlass.GetComponent<CrashedCarGlassController>().isManaged)
                 {
@@ -273,26 +270,27 @@ public class ToolController : MonoBehaviour
             
                 if (toolUserAnim.GetCurrentAnimatorStateInfo(0).IsName("CenterPunch"))
                 {
-//                    if (toolUserAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.7f)
-//                    {
-//                        // still running
-//                        return false;
-//                    } else
                     if (toolUserAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f)
                     {
                         toolUserAnim.SetBool(IsCenterPunch_id, false);
                     
                         // TODO .manage glass
-                        // currently delete
-                        //ToolDeactivate(toolUser.CurrentToughGlass);
                         toolUser.CurrentToughGlass.GetComponent<CrashedCarGlassController>().assignTexture();
                         toolUser.CurrentToughGlass.GetComponent<CrashedCarGlassController>().isManaged = true;
-
-                        //return true;
                     }
                     return false;
                 }
 
+            }else if(selectedToolScript.type == Firefighter.ToolStates.ToolType.LaminateGlass){
+                int IsLaminateGlass_id = Animator.StringToHash("IsLaminateGlass");
+                toolUserAnim.SetBool(IsLaminateGlass_id, true);
+                if (toolUserAnim.GetCurrentAnimatorStateInfo(0).IsName("LaminateGlass")){
+                    if(toolUserAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7){
+                        toolUserAnim.SetBool(IsLaminateGlass_id, false);
+                        return true;
+                    }
+                }
+                return false;
             }
 
         }

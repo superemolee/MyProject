@@ -39,6 +39,7 @@ namespace Firefighter.ToolStates
         StableWheel,
         StableSill,
         TapeDispenser,
-        SpringCenterPunch
+        SpringCenterPunch,
+        LaminateGlass
     }
 }
