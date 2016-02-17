@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{90BEC3A6-DF74-7609-C80C-2416D3203493}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_6_1;UNITY_4_6;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>C:/Program Files (x86)/Unity4.6.1f3/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files (x86)/Unity4.6.1f3/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\AI systems\CUHP\Src\Cleaning Robot\CameraInit.cs" />
+     <Compile Include="Assets\AI systems\CUHP\Src\Cleaning Robot\PlannerInterface.cs" />
+     <Compile Include="Assets\AI systems\CUHP\Src\Cleaning Robot\RobotController.cs" />
+     <Compile Include="Assets\AI systems\CUHP\Src\Cleaning Robot\RobotGUI.cs" />
+     <Compile Include="Assets\AI systems\CUHP\Src\Cleaning Robot\RoomGenerator.cs" />
+     <Compile Include="Assets\AI systems\CUHP\Src\Cleaning Robot\RoomHandler.cs" />
+     <Compile Include="Assets\AI systems\CUHP\Src\Cleaning Robot\WorldModelManager.cs" />
+     <Compile Include="Assets\AI systems\CUHP\Src\Fire Extinguish\Calculator.cs" />
+     <Compile Include="Assets\AI systems\CUHP\Src\Fire Extinguish\Domain\Domain_Firefighter.cs" />
+     <Compile Include="Assets\AI systems\CUHP\Src\Fire Extinguish\FireExtinguisher.cs" />
+     <Compile Include="Assets\AI systems\CUHP\Src\Fire Extinguish\FirefighterController.cs" />
+     <Compile Include="Assets\AI systems\CUHP\Src\Fire Extinguish\FirefighterGUI.cs" />
+     <Compile Include="Assets\AI systems\CUHP\Src\Fire Extinguish\Interface.cs" />
+     <Compile Include="Assets\AI systems\CUHP\Src\Fire Extinguish\Objectinfo.cs" />
+     <Compile Include="Assets\AI systems\CUHP\Src\Fire Extinguish\WorldStateInitializer.cs" />
+     <Compile Include="Assets\AI systems\CUHP\Src\Fire Extinguish\WorldStateManager.cs" />
+     <Compile Include="Assets\AI systems\CUHP\Src\HTN-planner\HTNPlanner.cs" />
+     <Compile Include="Assets\AI systems\CUHP\Src\HTN-planner\State.cs" />
+     <Compile Include="Assets\AI systems\CUHP\Src\Planning Domains\Domain_CleaningRobot.cs" />
+     <Compile Include="Assets\AI systems\CUHP\Src\Planning Domains\Domain_Swap.cs" />
+     <Compile Include="Assets\AI systems\CUHP\Src\Swap Test\SwapInterface.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\AI\Core\Assets\Blackboard.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\AI\Core\Assets\BlackboardVariable.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\AI\Core\Attributes.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\AI\Core\Enumerations.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\AI\Core\EvalUtil.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\AI\Core\ListEx.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\AI\Core\SerializationHelper.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\AI\Design\DataCollection.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\AI\Design\DesignUtil.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\AI\Design\DesignerMenuItem.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\AI\Internal\ObjectNames.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\AI\Planning\Assets\TaskNetworkGraph.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\AI\Planning\Attributes.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\AI\Planning\Components\TaskNetworkPlanner.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\AI\Planning\Enumerations.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\AI\Planning\Nodes\CompositeNode.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\AI\Planning\Nodes\Effect.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\AI\Planning\Nodes\GraphNodeBase.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\AI\Planning\Nodes\LinkNode.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\AI\Planning\Nodes\OperatorNode.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\AI\Planning\Nodes\Precondition.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\AI\Planning\Nodes\RootNode.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\AI\Planning\PlannerTask.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\AI\Planning\TaskNetworkPlan.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\FirefighterAI\Agents\FirefighterBackUp.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\FirefighterAI\Agents\FirefighterCasualtyCarer.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\FirefighterAI\Agents\FirefighterLeader.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\FirefighterAI\Agents\FirefighterToolOperator.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\FirefighterAI\Agents\FirefighterUnit.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\FirefighterAI\Agents\Paramedic.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\FirefighterAI\Agents\RescuerGeneral.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\FirefighterAI\Animator control\FirefighterAnimatorControl.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\FirefighterAI\Intraction\InteractableTool.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\FirefighterAI\Utilities\Enumerations.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\FirefighterAI\Utilities\VectorList.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\HTN Planner Examples\Capture The Flag\Agents\CTF_Agent.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\HTN Planner Examples\Capture The Flag\Agents\CTF_Commander.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\HTN Planner Examples\Capture The Flag\Components\BotHealthComponent.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\HTN Planner Examples\Capture The Flag\Components\BotLaser.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\HTN Planner Examples\Capture The Flag\Components\CTF_Camera.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\HTN Planner Examples\Capture The Flag\Components\CoverPointGenerator.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\HTN Planner Examples\Capture The Flag\Components\RuntimePlannerInfo.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\HTN Planner Examples\Capture The Flag\Components\TeamFlagPoint.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\HTN Planner Examples\Capture The Flag\Components\TeamGoalPoint.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\HTN Planner Examples\Capture The Flag\Components\TeamScore.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\HTN Planner Examples\Capture The Flag\Components\VisualAspect.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\HTN Planner Examples\Capture The Flag\Components\VisualSensor.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\HTN Planner Examples\Capture The Flag\Components\VisualTrackingInfo.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\HTN Planner Examples\Capture The Flag\Components\WaypointGenerator.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\HTN Planner Examples\Capture The Flag\Scripts\CoverNode.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\HTN Planner Examples\Capture The Flag\Scripts\DebugMessages.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\HTN Planner Examples\Capture The Flag\Scripts\DebugRender.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\HTN Planner Examples\Capture The Flag\Scripts\Enumerations.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\HTN Planner Examples\Capture The Flag\Scripts\FPSDisplay.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\HTN Planner Examples\Capture The Flag\Scripts\LineSegment.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\HTN Planner Examples\Capture The Flag\Scripts\PlannerFunctionLibrary.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\HTN Planner Examples\Capture The Flag\Scripts\PoolManager.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\HTN Planner Examples\Capture The Flag\Scripts\PooledObject.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\HTN Planner Examples\EXPLOSIONS PACK\Scripts\ExplosionLight.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\HTN Planner Examples\EXPLOSIONS PACK\Scripts\TimedObjectDestroy.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\TestAI\Agents\Sphereagent.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\TestAI\Agents\TestCubeScript.cs" />
+     <Compile Include="Assets\Animations\Locomotion\Scripts\Locomotion.cs" />
+     <Compile Include="Assets\Scripts\Car\BaseCrashedCarScript.cs" />
+     <Compile Include="Assets\Scripts\Car\CrashedCarController.cs" />
+     <Compile Include="Assets\Scripts\Car\CrashedCarGlassController.cs" />
+     <Compile Include="Assets\Scripts\Car\CrashedCarStates.cs" />
+     <Compile Include="Assets\Scripts\DebugHelper.cs" />
+     <Compile Include="Assets\Scripts\Fierfighter Control\Agent.cs" />
+     <Compile Include="Assets\Scripts\Fierfighter Control\FirefighterAgent.cs" />
+     <Compile Include="Assets\Scripts\GUI\CursorController.cs" />
+     <Compile Include="Assets\Scripts\GUI\OnHeadMessage.cs" />
+     <Compile Include="Assets\Scripts\GlobalValues.cs" />
+     <Compile Include="Assets\Scripts\Interactive fire\Fire.cs" />
+     <Compile Include="Assets\Scripts\Interactive fire\FireRangeSpreading.cs" />
+     <Compile Include="Assets\Scripts\Interactive fire\FireSpreading.cs" />
+     <Compile Include="Assets\Scripts\Interactive fire\Fire_Hit_Range.cs" />
+     <Compile Include="Assets\Scripts\NPC\FollowNPC.cs" />
+     <Compile Include="Assets\Scripts\NPC\Knowledge.cs" />
+     <Compile Include="Assets\Scripts\NPC\Navigation.cs" />
+     <Compile Include="Assets\Scripts\NPC\RaycastTable.cs" />
+     <Compile Include="Assets\Scripts\NPC\Vision.cs" />
+     <Compile Include="Assets\Scripts\Tool\BaseToolScript.cs" />
+     <Compile Include="Assets\Scripts\Tool\ToolController.cs" />
+     <Compile Include="Assets\Scripts\Tool\ToolStates.cs" />
+     <Compile Include="Assets\Scripts\avatar\Avatar.cs" />
+     <Compile Include="Assets\Scripts\avatar\Blink.cs" />
+     <Compile Include="Assets\Scripts\avatar\InjuredDocumentation.cs" />
+     <Compile Include="Assets\Scripts\avatar\RandomCloth.cs" />
+     <Compile Include="Assets\Scripts\avatar\TriggerSymptoms.cs" />
+     <Compile Include="Assets\Scripts\avatar\speech\Phoneme.cs" />
+     <Compile Include="Assets\Scripts\avatar\speech\Speak.cs" />
+     <Compile Include="Assets\Scripts\avatar\speech\SpeakGUI.cs" />
+     <Compile Include="Assets\Scripts\avatar\speech\SpeakMorphAnim.cs" />
+     <Compile Include="Assets\Scripts\avatar\vital\Disorder\BlockedBreath.cs" />
+     <Compile Include="Assets\Scripts\avatar\vital\Disorder\Burning.cs" />
+     <Compile Include="Assets\Scripts\avatar\vital\Disorder\Consciousness.cs" />
+     <Compile Include="Assets\Scripts\avatar\vital\Disorder\Disorder.cs" />
+     <Compile Include="Assets\Scripts\avatar\vital\Disorder\Fracture.cs" />
+     <Compile Include="Assets\Scripts\avatar\vital\Disorder\Poisening.cs" />
+     <Compile Include="Assets\Scripts\avatar\vital\Disorder\Wound.cs" />
+     <Compile Include="Assets\Scripts\avatar\vital\Display\BodyRegions.cs" />
+     <Compile Include="Assets\Scripts\avatar\vital\Display\Control.cs" />
+     <Compile Include="Assets\Scripts\avatar\vital\Display\TextureUtilities.cs" />
+     <Compile Include="Assets\Scripts\avatar\vital\Display\UVUtilities.cs" />
+     <Compile Include="Assets\Scripts\avatar\vital\Display\VerbalCommunication.cs" />
+     <Compile Include="Assets\Scripts\avatar\vital\Display\VitalModelAnimations.cs" />
+     <Compile Include="Assets\Scripts\avatar\vital\FirstAid\FirstAid.cs" />
+     <Compile Include="Assets\Scripts\avatar\vital\FirstAid\PatientPosition.cs" />
+     <Compile Include="Assets\Scripts\avatar\vital\FirstAid\Tourniquet.cs" />
+     <Compile Include="Assets\Scripts\avatar\vital\VitalModell.cs" />
+     <Compile Include="Assets\Scripts\avatar\vital\VitalPara\VPBlood.cs" />
+     <Compile Include="Assets\Scripts\avatar\vital\VitalPara\VPBloodPressure.cs" />
+     <Compile Include="Assets\Scripts\avatar\vital\VitalPara\VPPulse.cs" />
+     <Compile Include="Assets\Scripts\avatar\vital\VitalPara\VPRespirationRate.cs" />
+     <Compile Include="Assets\Scripts\avatar\vital\VitalPara\VPTemperature.cs" />
+     <Compile Include="Assets\Scripts\avatar\vital\VitalPara\VitalPara.cs" />
+     <Compile Include="Assets\Scripts\locomotion\Character Controller Scripts\AccelerationCharacterController.cs" />
+     <Compile Include="Assets\Scripts\locomotion\Character Controller Scripts\AimLookCharacterController.cs" />
+     <Compile Include="Assets\Scripts\locomotion\Character Controller Scripts\CharacterMotor.cs" />
+     <Compile Include="Assets\Scripts\locomotion\Character Controller Scripts\FPSCharacterController.cs" />
+     <Compile Include="Assets\Scripts\locomotion\Character Controller Scripts\Follower.cs" />
+     <Compile Include="Assets\Scripts\locomotion\Character Controller Scripts\JumpAndIdle.cs" />
+     <Compile Include="Assets\Scripts\locomotion\Character Controller Scripts\MouseLookCharacterController.cs" />
+     <Compile Include="Assets\Scripts\locomotion\Character Controller Scripts\NormalCharacterMotor.cs" />
+     <Compile Include="Assets\Scripts\locomotion\Character Controller Scripts\PhysicsCharacterMotor.cs" />
+     <Compile Include="Assets\Scripts\locomotion\Character Controller Scripts\PlatformCharacterController.cs" />
+     <Compile Include="Assets\Scripts\locomotion\Character Controller Scripts\WanderingAICharacterController.cs" />
+     <Compile Include="Assets\Scripts\locomotion\Locomotion System\AlignmentTracker.cs" />
+     <Compile Include="Assets\Scripts\locomotion\Locomotion System\GhostOriginal.cs" />
+     <Compile Include="Assets\Scripts\locomotion\Locomotion System\HeadLookController.cs" />
+     <Compile Include="Assets\Scripts\locomotion\Locomotion System\IK1JointAnalytic.cs" />
+     <Compile Include="Assets\Scripts\locomotion\Locomotion System\IKSimple.cs" />
+     <Compile Include="Assets\Scripts\locomotion\Locomotion System\IKSolver.cs" />
+     <Compile Include="Assets\Scripts\locomotion\Locomotion System\IMotionAnalyzer.cs" />
+     <Compile Include="Assets\Scripts\locomotion\Locomotion System\Interpolator.cs" />
+     <Compile Include="Assets\Scripts\locomotion\Locomotion System\LegAnimator.cs" />
+     <Compile Include="Assets\Scripts\locomotion\Locomotion System\LegController.cs" />
+     <Compile Include="Assets\Scripts\locomotion\Locomotion System\MotionAnalyzer.cs" />
+     <Compile Include="Assets\Scripts\locomotion\Locomotion System\MotionAnalyzerBackwards.cs" />
+     <Compile Include="Assets\Scripts\locomotion\Locomotion System\PolarGradientBandInterpolator.cs" />
+     <Compile Include="Assets\Scripts\locomotion\Locomotion System\TrajectoryVisualizer.cs" />
+     <Compile Include="Assets\Scripts\locomotion\Locomotion System\Util.cs" />
+     <Compile Include="Assets\Scripts\util\BreathingAir.cs" />
+     <Compile Include="Assets\Scripts\util\ComboBox.cs" />
+     <Compile Include="Assets\Scripts\util\MaxMouseOrbit.cs" />
+     <Compile Include="Assets\Scripts\util\MouseOrbitImproved.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\MegaFier Test Scene\Scripts\BallBounce.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\MegaFier Test Scene\Scripts\KDTree.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\MegaFier Test Scene\Scripts\MOrbit.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\MegaFier Test Scene\Scripts\MatchShape.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\MegaFier Test Scene\Scripts\MegaCurveDeform.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\MegaFier Test Scene\Scripts\MegaDeform.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\MegaFier Test Scene\Scripts\MegaGUI.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\MegaFier Test Scene\Scripts\MegaRopeDeform.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\MegaFier Test Scene\Scripts\MegaSoft2D.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\MegaFier Test Scene\Scripts\NearestPoint.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\MegaFier Test Scene\Scripts\PathFollow.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\MegaFier Test Scene\Scripts\PyramidMesh.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\MegaFier Test Scene\Scripts\Scroll.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\MegaFier Test Scene\Scripts\SoftBody.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\MegaFier Test Scene\Scripts\ToggleMultiCore.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\MegaFier Test Scene\Scripts\WalkBridge.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\MegaFier Test Scene\Scripts\WalkRope.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\MegaBook.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\MegaBox3.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\MegaControllers\MegaBezFloatKeyControl.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\MegaControllers\MegaBezVector3KeyControl.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\MegaControllers\MegaControl.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\MegaMatrix.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\MegaPerlin.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\MegaShape\MegaMeshPage.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\MegaShape\MegaShape.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\MegaShape\MegaShapeArc.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\MegaShape\MegaShapeCircle.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\MegaShape\MegaShapeEllipse.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\MegaShape\MegaShapeHelix.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\MegaShape\MegaShapeNGon.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\MegaShape\MegaShapeRectangle.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\MegaShape\MegaShapeStar.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\MegaUtils.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaBend.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaBubble.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaBulge.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaCrumple.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaCylindrify.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaDisplace.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaFFD.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaFFD2x2x2.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaFFD3x3x3.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaFFD4x4x4.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaHump.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaMelt.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaModifier.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaModifiers.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaModifyGroup.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaModifyObject.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaMorph\MegaMorphOMatic.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaNoise.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaPageFlip.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaPaint.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaPathDeform.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaPivotAdjust.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaPointCache.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaPointCacheAnimator.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaPointCacheInstance.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaPush.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaRadialSkew.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaRipple.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaRubber.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaSimpleMod.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaSinusCurve.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaSkew.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaSpherify.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaSqueeze.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaStretch.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaTaper.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaTwist.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaVertNoise.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaVertexAnim.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaWave.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\MegaWorldPathDeform.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\Morph\MegaMorph.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\Morph\MegaMorphAnim.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\Morph\MegaMorphAnimator.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\Morph\MegaMorphChan.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\Morph\MegaMorphTarget.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\Selection\MegaSelection.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\Selection\MegaVertColSelect.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\Selection\MegaVolSelect.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\UVMods\MegaUVAdjust.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\UVMods\MegaUVTiles.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\Warps\MegaBendWarp.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\Warps\MegaNoiseWarp.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\Warps\MegaRippleWarp.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\Warps\MegaSkewWarp.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\Warps\MegaStretchWarp.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\Warps\MegaTaperWarp.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\Warps\MegaTwistWarp.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\Warps\MegaWarp.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\Warps\MegaWarpBind.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaFiers\Modifiers\Warps\MegaWaveWarp.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaGrab\DOFCamera.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaGrab\JPGEncoder.cs" />
+     <Compile Include="Assets\Tools\Mega-Fiers\Scripts\MegaGrab\MegaGrab.cs" />
+     <Compile Include="Assets\Tools\RoadTool\Scripts\Road.cs" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\SunShaftsComposite.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionCurves.shader" />
+     <None Include="Assets\AI systems\StagPoint\HTN Planner Examples\EXPLOSIONS PACK\Readme.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\NFAA.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\VignetteShader.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\DepthOfFieldScatter.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\SSAA.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\RadialBlur.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\DepthOfFieldDX11.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ContrastComposite.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAAPreset3.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\FisheyeShader.shader" />
+     <None Include="Assets\Shader\AlphaTest-Diffuse.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\DepthOfField34.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\TiltShift.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ConvertDepth.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionCurvesSimple.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\CreaseApply.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ChromaticAberrationShader.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlobalFog.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionSelective.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\Bokeh34.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\CameraMotionBlurDX11.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
+     <None Include="Assets\Shader\mh-avatar.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\CameraMotionBlur.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\DLAA.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseAndGrainDX11.shader" />
+     <None Include="Assets\AI systems\StagPoint\AI\Resources\ChangeLog.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\SeparableBlur.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\MotionBlurClear.shader" />
+     <None Include="Assets\AI systems\StagPoint\HTN Planner Examples\EXPLOSIONS PACK\Shaders\HDRAdditiveParticle.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionEffect.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseAndGrain.shader" />
+     <None Include="Assets\AI systems\StagPoint\HTN Planner Examples\EXPLOSIONS PACK\EXPLOSIONS PACK - Permission to Include in HTN Planner.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\VignettingShader.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Tonemapper.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
+     <None Include="Assets\Shader\DoubleSided.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAA2.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrection3DLut.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\PrepareSunShaftsBlur.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\Blend.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\BlendModesOverlay.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\SimpleClear.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAA3Console.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAAPreset2.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendForBloom.shader" />
+ <Reference Include="Assembly-UnityScript-firstpass">
+ <HintPath>C:/Users/li/Documents/GitHub/MyProject/MyProject/MyProject.git/fftSystem/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Program Files (x86)/Unity4.6.1f3/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="dfTweenLite">
+ <HintPath>C:/Users/li/Documents/GitHub/MyProject/MyProject/MyProject.git/fftSystem/Assets/AI systems/StagPoint/HTN Planner Examples/Plugins/dfTweenLite.dll</HintPath>
+ </Reference>
+ <Reference Include="StagPoint.Eval">
+ <HintPath>C:/Users/li/Documents/GitHub/MyProject/MyProject/MyProject.git/fftSystem/Assets/AI systems/StagPoint/Plugins/StagPoint.Eval.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
+      <Project>{E02EDDFA-8F68-2B0C-3AA7-562302EC5A0B}</Project>      <Name>Assembly-CSharp-firstpass-vs</Name>    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>

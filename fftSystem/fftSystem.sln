@@ -1,0 +1,85 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{109335B9-C1A1-79E0-B2F0-70B675849C5D}") = "fftSystem", "Assembly-CSharp-firstpass.csproj", "{E02EDDFA-8F68-2B0C-3AA7-562302EC5A0B}"
+EndProject
+Project("{109335B9-C1A1-79E0-B2F0-70B675849C5D}") = "fftSystem", "Assembly-CSharp.csproj", "{90BEC3A6-DF74-7609-C80C-2416D3203493}"
+EndProject
+Project("{109335B9-C1A1-79E0-B2F0-70B675849C5D}") = "fftSystem", "Assembly-CSharp-Editor-firstpass.csproj", "{BBE8F894-4F5F-F52E-5EEF-62F86A845E73}"
+EndProject
+Project("{109335B9-C1A1-79E0-B2F0-70B675849C5D}") = "fftSystem", "Assembly-CSharp-Editor.csproj", "{E59BAC48-55C6-D730-B829-6E6412776A14}"
+EndProject
+Project("{109335B9-C1A1-79E0-B2F0-70B675849C5D}") = "fftSystem", "Assembly-UnityScript-firstpass.unityproj", "{5CB4B1A7-BB9B-D119-CD25-C9D957CAD220}"
+EndProject
+Project("{109335B9-C1A1-79E0-B2F0-70B675849C5D}") = "fftSystem", "Assembly-UnityScript-Editor-firstpass.unityproj", "{2321BB86-E61B-AD73-C340-C09C51F659FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E02EDDFA-8F68-2B0C-3AA7-562302EC5A0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E02EDDFA-8F68-2B0C-3AA7-562302EC5A0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E02EDDFA-8F68-2B0C-3AA7-562302EC5A0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E02EDDFA-8F68-2B0C-3AA7-562302EC5A0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90BEC3A6-DF74-7609-C80C-2416D3203493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90BEC3A6-DF74-7609-C80C-2416D3203493}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90BEC3A6-DF74-7609-C80C-2416D3203493}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90BEC3A6-DF74-7609-C80C-2416D3203493}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBE8F894-4F5F-F52E-5EEF-62F86A845E73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBE8F894-4F5F-F52E-5EEF-62F86A845E73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBE8F894-4F5F-F52E-5EEF-62F86A845E73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBE8F894-4F5F-F52E-5EEF-62F86A845E73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E59BAC48-55C6-D730-B829-6E6412776A14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E59BAC48-55C6-D730-B829-6E6412776A14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E59BAC48-55C6-D730-B829-6E6412776A14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E59BAC48-55C6-D730-B829-6E6412776A14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CB4B1A7-BB9B-D119-CD25-C9D957CAD220}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CB4B1A7-BB9B-D119-CD25-C9D957CAD220}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CB4B1A7-BB9B-D119-CD25-C9D957CAD220}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CB4B1A7-BB9B-D119-CD25-C9D957CAD220}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2321BB86-E61B-AD73-C340-C09C51F659FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2321BB86-E61B-AD73-C340-C09C51F659FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2321BB86-E61B-AD73-C340-C09C51F659FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2321BB86-E61B-AD73-C340-C09C51F659FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+																																		GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+		Policies = $0
+		$0.TextStylePolicy = $1
+		$1.inheritsSet = VisualStudio
+		$1.inheritsScope = text/plain
+		$1.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $2
+		$2.IndentSwitchBody = True
+		$2.AnonymousMethodBraceStyle = NextLine
+		$2.PropertyBraceStyle = NextLine
+		$2.PropertyGetBraceStyle = NextLine
+		$2.PropertySetBraceStyle = NextLine
+		$2.EventBraceStyle = NextLine
+		$2.EventAddBraceStyle = NextLine
+		$2.EventRemoveBraceStyle = NextLine
+		$2.StatementBraceStyle = NextLine
+		$2.ArrayInitializerBraceStyle = NextLine
+		$2.BeforeMethodDeclarationParentheses = False
+		$2.BeforeMethodCallParentheses = False
+		$2.BeforeConstructorDeclarationParentheses = False
+		$2.BeforeDelegateDeclarationParentheses = False
+		$2.NewParentheses = False
+		$2.inheritsSet = Mono
+		$2.inheritsScope = text/x-csharp
+		$2.scope = text/x-csharp
+		$0.TextStylePolicy = $3
+		$3.FileWidth = 120
+		$3.TabWidth = 4
+		$3.EolMarker = Unix
+		$3.inheritsSet = Mono
+		$3.inheritsScope = text/plain
+		$3.scope = text/plain
+	EndGlobalSection
+
+EndGlobal
