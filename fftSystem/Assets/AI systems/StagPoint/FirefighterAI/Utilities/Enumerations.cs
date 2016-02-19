@@ -6,6 +6,36 @@ using System.Text;
 
 namespace Firefighter.Utilities
 {
+    public enum GroupLeaderTasks{
+        Free = 0
+    }
+
+    public enum ToolGroupTasks{
+        Free = 0,
+        StableVehicle
+    }
+
+    public enum ToolMemberTasks{
+        Free = 0,
+        StableSills,
+        StableWheels
+    }
+
+    public enum WaterGroupTasks{
+        Free = 0
+    }
+
+    public enum WaterMemberTasks{
+        Free = 0
+    }
+   
+    public enum HoseGroupTasks{
+        Free = 0
+    }
+
+    public enum HoseMemberTasks{
+        Free = 0
+    }
 	
 	/// <summary>
 	/// Tasks using crew methods.

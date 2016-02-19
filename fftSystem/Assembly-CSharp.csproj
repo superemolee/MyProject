@@ -94,6 +94,7 @@
      <Compile Include="Assets\AI systems\StagPoint\FirefighterAI\Agents\FirefighterBackUp.cs" />
      <Compile Include="Assets\AI systems\StagPoint\FirefighterAI\Agents\FirefighterCasualtyCarer.cs" />
      <Compile Include="Assets\AI systems\StagPoint\FirefighterAI\Agents\FirefighterLeader.cs" />
+     <Compile Include="Assets\AI systems\StagPoint\FirefighterAI\Agents\FirefighterToolGroup.cs" />
      <Compile Include="Assets\AI systems\StagPoint\FirefighterAI\Agents\FirefighterToolOperator.cs" />
      <Compile Include="Assets\AI systems\StagPoint\FirefighterAI\Agents\FirefighterUnit.cs" />
      <Compile Include="Assets\AI systems\StagPoint\FirefighterAI\Agents\Paramedic.cs" />
