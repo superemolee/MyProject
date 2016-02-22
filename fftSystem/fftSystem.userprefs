@@ -1,12 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\AI systems\StagPoint\FirefighterAI\Agents\FirefighterLeader.cs">
     <Files>
-      <File FileName="Assets\AI systems\StagPoint\FirefighterAI\Agents\FirefighterToolGroup.cs" Line="14" Column="32" />
-      <File FileName="Assets\AI systems\StagPoint\FirefighterAI\Agents\FirefighterLeader.cs" Line="23" Column="2" />
-      <File FileName="Assets\AI systems\StagPoint\FirefighterAI\Utilities\Enumerations.cs" Line="21" Column="21" />
-      <File FileName="Assets\Scripts\DebugHelper.cs" Line="30" Column="14" />
-      <File FileName="Assets\AI systems\StagPoint\FirefighterAI\Agents\FirefighterToolOperator.cs" Line="15" Column="45" />
+      <File FileName="Assets\AI systems\StagPoint\FirefighterAI\Agents\FirefighterLeader.cs" Line="47" Column="6" />
+      <File FileName="Assets\AI systems\StagPoint\FirefighterAI\Agents\FirefighterToolGroup.cs" Line="25" Column="11" />
+      <File FileName="Assets\AI systems\StagPoint\FirefighterAI\Utilities\Enumerations.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\DebugHelper.cs" Line="19" Column="39" />
+      <File FileName="Assets\AI systems\StagPoint\FirefighterAI\Agents\FirefighterToolOperator.cs" Line="43" Column="27" />
+      <File FileName="Assets\AI systems\StagPoint\AI\Core\Assets\Blackboard.cs" Line="154" Column="32" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

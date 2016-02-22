@@ -18,6 +18,16 @@ public class FirefighterLeader : RescuerGeneral {
     public bool Rescue;
 
 
+    private TaskNetworkPlanner planner;
+    
+    [NonSerialized]
+    public Blackboard
+        Blackboard;
+
+    [NonSerialized]
+    public GameObject toolGroup;
+    // TODO other groups ... 
+
 	// Use this for initialization
 	void Start () {
 	
@@ -26,7 +36,19 @@ public class FirefighterLeader : RescuerGeneral {
 	// Update is called once per frame
 	void Update () {
 	
+        // Obtain a reference to the runtime Blackboard instance
+        this.Blackboard = planner.RuntimeBlackboard;
+        
+        // Data bind blackboard variables
+        Blackboard.DataBind(this, BlackboardBindingMode.AttributeControlled);
 	}
+
+    void OnEnable()
+    {
+        planner = GetComponent<TaskNetworkPlanner>();
+
+    }
+
 	
 	#region Action/Operator methods
 
@@ -48,7 +70,7 @@ public class FirefighterLeader : RescuerGeneral {
 
     public TaskStatus VehicleStabilization()
     {
-        
+        toolGroup.GetComponent<FirefighterToolGroup>().currentToolGroupTask = ToolGroupTasks.StableVehicle;
         return TaskStatus.Succeeded;
         
     }
