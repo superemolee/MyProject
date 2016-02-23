@@ -21,6 +21,12 @@ namespace Firefighter.Utilities
         StableWheels
     }
 
+    public enum ToolOperatorTasks{
+        Free = 0,
+        StableSills,
+        StableWheels
+    }
+
     public enum WaterGroupTasks{
         Free = 0
     }

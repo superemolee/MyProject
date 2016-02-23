@@ -23,12 +23,38 @@ public class FirefighterToolGroup : MonoBehaviour {
     [BlackboardVariable]
     [NonSerialized]
     public ToolGroupTasks
-        currentToolGroupTask;
+        CurrentToolGroupTask;
+
+    // Note need to be assigned
+    // Atf
+    public GameObject
+        toolOperator1;
+    
+    // Note need to be assigned
+    // Atm
+    public GameObject
+        toolOperator2;
+    
+    [NonSerialized]
+    public FirefighterToolOperator
+        toolOperatorScript1;
+    
+    [NonSerialized]
+    public FirefighterToolOperator
+        toolOperatorScript2;
 
 
 	// Use this for initialization
 	void Start () {
-	
+        if(toolOperator1 != null)
+            toolOperatorScript1 = toolOperator1.GetComponent<FirefighterToolOperator>();
+        else
+            Debug.LogError("Init Error: Please assign ToolOperator 1 object to the firefighter tool group.");
+        
+        if(toolOperator2 != null)
+            toolOperatorScript2 = toolOperator2.GetComponent<FirefighterToolOperator>();
+        else
+            Debug.LogError("Init Error: Please assign ToolOperator 2 object to the firefighter tool group.");
 	}
 	
 	// Update is called once per frame
@@ -51,16 +77,28 @@ public class FirefighterToolGroup : MonoBehaviour {
     
     public TaskStatus StableSills()
     {
-        
-        return TaskStatus.Succeeded;
+        // this is the logically assigning tasks from tool group (Angriffstrupp) to tool operator
+        // for reality, we need animations like giveing order.. 
+        if (toolOperatorScript1 != null)
+        {
+            toolOperatorScript1.CurrentToolOperatorTask = ToolOperatorTasks.StableSills;
+            return TaskStatus.Succeeded;
+        } else 
+            return TaskStatus.Failed;
         
     }
-
+    
     
     public TaskStatus StableWheels()
     {
-        
-        return TaskStatus.Succeeded;
+        // this is the logically assigning tasks from tool group (Angriffstrupp) to tool operator
+        // for reality, we need animations like giveing order.. 
+        if (toolOperatorScript2 != null)
+        {
+            toolOperatorScript2.CurrentToolOperatorTask = ToolOperatorTasks.StableWheels;
+            return TaskStatus.Succeeded;
+        } else 
+            return TaskStatus.Failed;
         
     }
 }

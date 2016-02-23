@@ -1,15 +1,19 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
-public class CrashedCarStates : MonoBehaviour {
+using UnityEngine;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+namespace Firefighter.CrashedCarStates
+{
+    
+    /// <summary>
+    /// This type defines how the vehicle resting on.
+    /// </summary>
+    public enum VehicleRestingOn{
+        Wheels = 0,
+        Side,
+        Roof
+    }
 }

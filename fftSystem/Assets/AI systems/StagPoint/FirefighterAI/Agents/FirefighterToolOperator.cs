@@ -59,6 +59,11 @@ public class FirefighterToolOperator : RescuerGeneral
 
     [BlackboardVariable]
     [NonSerialized]
+    public ToolOperatorTasks
+        CurrentToolOperatorTask;
+
+    [BlackboardVariable]
+    [NonSerialized]
     private VehicleRestingOn
         VehicleOn;
 
@@ -185,9 +190,7 @@ public class FirefighterToolOperator : RescuerGeneral
         Car2 = GameObject.Find("Car2");
         InnerCircleSurveyTarget = calculateActionCircle();
         Task = Tasks.Free;
-        VehicleOn = VehicleRestingOn.Wheels; // TODO: defined the game logic later for how to control this information.
-        //StablePointSills.points.Add(new Vector3(0,0,0)); // TODO: find a way to initialize this points list.
-        //StablePointWheels.points.Add (new Vector3(0,0,0)); // TODO: find a way to initialize this points list.
+
         IsToolInToolStageArea = true; // TODO: this variable should be calculated together with tools. Currently all the tools are in tool stage area
         Tool = null; 
         //hasTool = false;

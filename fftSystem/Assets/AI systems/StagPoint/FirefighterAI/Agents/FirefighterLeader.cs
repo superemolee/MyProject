@@ -24,13 +24,24 @@ public class FirefighterLeader : RescuerGeneral {
     public Blackboard
         Blackboard;
 
-    [NonSerialized]
-    public GameObject toolGroup;
+    // Note need to be assigned
+    public GameObject
+        toolGroup;
     // TODO other groups ... 
+    
+    [NonSerialized]
+    public FirefighterToolGroup
+        toolGroupScript; 
 
 	// Use this for initialization
 	void Start () {
-	
+        if (toolGroup != null)
+        {
+            toolGroupScript = toolGroup.GetComponent<FirefighterToolGroup>();
+        } else
+        {
+            Debug.LogError("Init Error: Please assign ToolGroup object to the firefighter leader.");
+        }
 	}
 	
 	// Update is called once per frame
@@ -70,8 +81,14 @@ public class FirefighterLeader : RescuerGeneral {
 
     public TaskStatus VehicleStabilization()
     {
-        toolGroup.GetComponent<FirefighterToolGroup>().currentToolGroupTask = ToolGroupTasks.StableVehicle;
-        return TaskStatus.Succeeded;
+        // this is the logically assigning tasks from firefighter leader to tool group (Angriffstrupp)
+        // for reality, we need animations like giveing order.. 
+        if (toolGroupScript != null)
+        {
+            toolGroupScript.CurrentToolGroupTask = ToolGroupTasks.StableVehicle;
+            return TaskStatus.Succeeded;
+        } else 
+            return TaskStatus.Failed;
         
     }
 

@@ -372,10 +372,10 @@
  <HintPath>C:/Program Files (x86)/Unity4.6.1f3/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="dfTweenLite">
- <HintPath>C:/Users/li/Documents/GitHub/MyProject/MyProject/MyProject.git/fftSystem/Assets/AI systems/StagPoint/HTN Planner Examples/Plugins/dfTweenLite.dll</HintPath>
+ <HintPath>C:/Users/li/Documents/GitHub/MyProject/MyProject/MyProject/fftSystem/Assets/AI systems/StagPoint/HTN Planner Examples/Plugins/dfTweenLite.dll</HintPath>
  </Reference>
  <Reference Include="StagPoint.Eval">
- <HintPath>C:/Users/li/Documents/GitHub/MyProject/MyProject/MyProject.git/fftSystem/Assets/AI systems/StagPoint/Plugins/StagPoint.Eval.dll</HintPath>
+ <HintPath>C:/Users/li/Documents/GitHub/MyProject/MyProject/MyProject/fftSystem/Assets/AI systems/StagPoint/Plugins/StagPoint.Eval.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

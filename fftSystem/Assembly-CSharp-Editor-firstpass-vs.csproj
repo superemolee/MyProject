@@ -106,7 +106,7 @@
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendForBloom.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/li/Documents/GitHub/MyProject/MyProject/MyProject.git/fftSystem/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>C:/Users/li/Documents/GitHub/MyProject/MyProject/MyProject/fftSystem/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity4.6.1f3/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
@@ -115,10 +115,10 @@
  <HintPath>C:/Program Files (x86)/Unity4.6.1f3/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/Editor/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="dfTweenLite">
- <HintPath>C:/Users/li/Documents/GitHub/MyProject/MyProject/MyProject.git/fftSystem/Assets/AI systems/StagPoint/HTN Planner Examples/Plugins/dfTweenLite.dll</HintPath>
+ <HintPath>C:/Users/li/Documents/GitHub/MyProject/MyProject/MyProject/fftSystem/Assets/AI systems/StagPoint/HTN Planner Examples/Plugins/dfTweenLite.dll</HintPath>
  </Reference>
  <Reference Include="StagPoint.Eval">
- <HintPath>C:/Users/li/Documents/GitHub/MyProject/MyProject/MyProject.git/fftSystem/Assets/AI systems/StagPoint/Plugins/StagPoint.Eval.dll</HintPath>
+ <HintPath>C:/Users/li/Documents/GitHub/MyProject/MyProject/MyProject/fftSystem/Assets/AI systems/StagPoint/Plugins/StagPoint.Eval.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files (x86)/Unity4.6.1f3/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
