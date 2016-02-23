@@ -122,6 +122,25 @@ public class FirefighterToolOperator : RescuerGeneral
     private Vector3
         SpareLoc;
 
+#region Report Vars
+    [BlackboardVariable]
+    [NonSerialized]
+    public bool
+        IsInnerCircleSurveySucceed;
+
+    [BlackboardVariable]
+    [NonSerialized]
+    public bool
+        IsStableSillSucceed;
+
+    [BlackboardVariable]
+    [NonSerialized]
+    public bool
+        IsStableWheelSucceed;
+
+#endregion
+
+
 #endregion
 
 
@@ -159,8 +178,13 @@ public class FirefighterToolOperator : RescuerGeneral
        
         if (StablePointSillsCounter > 0)
             CurrentStablePointSill = crashedCarScript.StablePointSills.First<GameObject>();
+        else
+            IsStableSillSucceed = true;
+
         if (StablePointWheelsCounter > 0)
             CurrentStablePointWheel = crashedCarScript.StablePointWheels.First<GameObject>();
+        else
+            IsStableWheelSucceed = true;
         if(ToughGlassCount > 0 ){
             CurrentToughGlass = crashedCarScript.ToughGlass.First<GameObject>();
             if(CurrentToughGlass.transform.childCount > 0)

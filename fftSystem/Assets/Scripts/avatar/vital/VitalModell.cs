@@ -230,10 +230,10 @@ public class VitalModell: MonoBehaviour {
 		m_bloodAmount.VitalParaVal = m_bloodAmount.initialVitalPara - ((m_wound.TotalBloodLoss + m_fracture.TotalBloodLoss )*m_timeSinceDisorder);
 		m_timeBreathBlocked = ((m_timeSinceDisorder*60.0f) *m_blockedBreath.DisorderValue);
 		
-		Debug.Log("TimeBreathblocked: " + m_timeBreathBlocked);
+//		Debug.Log("TimeBreathblocked: " + m_timeBreathBlocked);
 		
 		m_cohb = CalculateCOHb(m_timeSinceDisorder*60.0f);
-		Debug.Log("COHB: " +m_cohb);
+//		Debug.Log("COHB: " +m_cohb);
 		
 		//disable canwalk if there are fractures at the leg
 		if(m_canWalk)

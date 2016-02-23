@@ -33,6 +33,17 @@ public class FirefighterLeader : RescuerGeneral {
     public FirefighterToolGroup
         toolGroupScript; 
 
+    [BlackboardVariable]
+    [NonSerialized]
+    public bool
+        IsInnerCircleSurveySucceed;
+
+    [BlackboardVariable]
+    [NonSerialized]
+    public bool
+        IsVehicleStabilizationSucceed;
+
+
 	// Use this for initialization
 	void Start () {
         if (toolGroup != null)
@@ -67,8 +78,14 @@ public class FirefighterLeader : RescuerGeneral {
 
 	public TaskStatus InnerCircleSurvey()
 	{
-		
-		return TaskStatus.Succeeded;
+        // this is the logically assigning tasks from firefighter leader to tool group (Angriffstrupp)
+        // for reality, we need animations like giveing order.. 
+        if (toolGroupScript != null)
+        {
+            toolGroupScript.CurrentToolGroupTask = ToolGroupTasks.InnerCircleSurvey;
+            return TaskStatus.Succeeded;
+        } else 
+            return TaskStatus.Failed;
 		
 	}
 

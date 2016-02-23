@@ -12,6 +12,7 @@ namespace Firefighter.Utilities
 
     public enum ToolGroupTasks{
         Free = 0,
+        InnerCircleSurvey,
         StableVehicle
     }
 
@@ -24,7 +25,8 @@ namespace Firefighter.Utilities
     public enum ToolOperatorTasks{
         Free = 0,
         StableSills,
-        StableWheels
+        StableWheels,
+        InnerCircle
     }
 
     public enum WaterGroupTasks{

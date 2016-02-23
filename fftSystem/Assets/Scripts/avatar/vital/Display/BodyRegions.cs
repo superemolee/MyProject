@@ -186,7 +186,7 @@ public class BodyRegions : MonoBehaviour
 			{
 				m_colorIdx.Add(regions[j], new List<int>());
 			}
-			Debug.Log("time: " + Time.timeSinceLevelLoad);
+//			Debug.Log("time: " + Time.timeSinceLevelLoad);
 			//fill internal array for each region to get the region of interest
 			for(int i=0; i< pixels.Length;++i)
 			{
