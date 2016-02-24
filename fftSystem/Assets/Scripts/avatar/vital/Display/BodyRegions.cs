@@ -221,7 +221,7 @@ public class BodyRegions : MonoBehaviour
 					}
 				}
 			}
-			Debug.Log("time: " + Time.timeSinceLevelLoad);
+//			Debug.Log("time: " + Time.timeSinceLevelLoad);
 		}
 	}
 	

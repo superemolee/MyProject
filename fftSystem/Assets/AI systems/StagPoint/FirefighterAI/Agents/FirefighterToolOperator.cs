@@ -447,7 +447,7 @@ public class FirefighterToolOperator : RescuerGeneral
                 m_animator.SetBool(IsCheck_id, true);
                 isCheck = false;
                 transform.rotation = Quaternion.LookRotation(target - transform.position);
-                Debug.Log(target);
+//                Debug.Log(target);
                 //nav.Stop();
             }
             if (points.Count == 0)

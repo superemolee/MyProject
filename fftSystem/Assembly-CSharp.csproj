@@ -46,27 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\AI systems\CUHP\Src\Cleaning Robot\CameraInit.cs" />
-     <Compile Include="Assets\AI systems\CUHP\Src\Cleaning Robot\PlannerInterface.cs" />
-     <Compile Include="Assets\AI systems\CUHP\Src\Cleaning Robot\RobotController.cs" />
-     <Compile Include="Assets\AI systems\CUHP\Src\Cleaning Robot\RobotGUI.cs" />
-     <Compile Include="Assets\AI systems\CUHP\Src\Cleaning Robot\RoomGenerator.cs" />
-     <Compile Include="Assets\AI systems\CUHP\Src\Cleaning Robot\RoomHandler.cs" />
-     <Compile Include="Assets\AI systems\CUHP\Src\Cleaning Robot\WorldModelManager.cs" />
-     <Compile Include="Assets\AI systems\CUHP\Src\Fire Extinguish\Calculator.cs" />
-     <Compile Include="Assets\AI systems\CUHP\Src\Fire Extinguish\Domain\Domain_Firefighter.cs" />
-     <Compile Include="Assets\AI systems\CUHP\Src\Fire Extinguish\FireExtinguisher.cs" />
-     <Compile Include="Assets\AI systems\CUHP\Src\Fire Extinguish\FirefighterController.cs" />
-     <Compile Include="Assets\AI systems\CUHP\Src\Fire Extinguish\FirefighterGUI.cs" />
-     <Compile Include="Assets\AI systems\CUHP\Src\Fire Extinguish\Interface.cs" />
-     <Compile Include="Assets\AI systems\CUHP\Src\Fire Extinguish\Objectinfo.cs" />
-     <Compile Include="Assets\AI systems\CUHP\Src\Fire Extinguish\WorldStateInitializer.cs" />
-     <Compile Include="Assets\AI systems\CUHP\Src\Fire Extinguish\WorldStateManager.cs" />
-     <Compile Include="Assets\AI systems\CUHP\Src\HTN-planner\HTNPlanner.cs" />
-     <Compile Include="Assets\AI systems\CUHP\Src\HTN-planner\State.cs" />
-     <Compile Include="Assets\AI systems\CUHP\Src\Planning Domains\Domain_CleaningRobot.cs" />
-     <Compile Include="Assets\AI systems\CUHP\Src\Planning Domains\Domain_Swap.cs" />
-     <Compile Include="Assets\AI systems\CUHP\Src\Swap Test\SwapInterface.cs" />
      <Compile Include="Assets\AI systems\StagPoint\AI\Core\Assets\Blackboard.cs" />
      <Compile Include="Assets\AI systems\StagPoint\AI\Core\Assets\BlackboardVariable.cs" />
      <Compile Include="Assets\AI systems\StagPoint\AI\Core\Attributes.cs" />

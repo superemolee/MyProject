@@ -1,8 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="D:\Unity Projects\ResearchTest\Assets\Vision.cs">
     <Files>
-      <File FileName="D:\Unity Projects\ResearchTest\Assets\Vision.cs" Line="26" Column="78" />
+      <File FileName="D:\Unity Projects\ResearchTest\Assets\Vision.cs" Line="38" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
