@@ -49,6 +49,11 @@ public class FirefighterToolOperator : RescuerGeneral
 
     [BlackboardVariable]
     [NonSerialized]
+    private bool
+        LaminateGlassManaged;
+
+    [BlackboardVariable]
+    [NonSerialized]
     private Vector3
         InnerCircleSurveyTarget;
 
@@ -138,12 +143,20 @@ public class FirefighterToolOperator : RescuerGeneral
     public bool
         IsStableWheelSucceed;
 
+    [BlackboardVariable]
+    [NonSerialized]
+    public bool
+        IsManageLaminateSucceed;
+
+    [BlackboardVariable]
+    [NonSerialized]
+    public bool
+        IsManageToughSucceed;
+
 #endregion
 
 
 #endregion
-
-
 
     private TaskNetworkPlanner planner;
 
@@ -176,15 +189,18 @@ public class FirefighterToolOperator : RescuerGeneral
         StablePointWheelsCounter = crashedCarScript.StablePointWheels.Count;
         ToughGlassCount = crashedCarScript.ToughGlass.Count;
        
+        #region Report codes
         if (StablePointSillsCounter > 0)
             CurrentStablePointSill = crashedCarScript.StablePointSills.First<GameObject>();
-        else
+        else{
             IsStableSillSucceed = true;
 
+        }
         if (StablePointWheelsCounter > 0)
             CurrentStablePointWheel = crashedCarScript.StablePointWheels.First<GameObject>();
         else
             IsStableWheelSucceed = true;
+        
         if(ToughGlassCount > 0 ){
             CurrentToughGlass = crashedCarScript.ToughGlass.First<GameObject>();
             if(CurrentToughGlass.transform.childCount > 0)
@@ -196,7 +212,14 @@ public class FirefighterToolOperator : RescuerGeneral
             }
             else
                 isGlassNeedTape = false;
-        }
+        }else
+            IsManageToughSucceed = true;
+
+        if(LaminateGlassManaged)
+            IsManageLaminateSucceed = true;
+        #endregion
+
+
         taskSetter();
     }
 

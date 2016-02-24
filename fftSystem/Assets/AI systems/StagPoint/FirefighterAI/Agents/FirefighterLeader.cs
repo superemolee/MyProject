@@ -43,6 +43,11 @@ public class FirefighterLeader : RescuerGeneral {
     public bool
         IsVehicleStabilizationSucceed;
 
+    [BlackboardVariable]
+    [NonSerialized]
+    public bool
+        IsGlassManagementSucceed;
+
 
 	// Use this for initialization
 	void Start () {
@@ -112,9 +117,14 @@ public class FirefighterLeader : RescuerGeneral {
 
     public TaskStatus GlassManagement()
     {
-        
-        return TaskStatus.Succeeded;
-        
+        // this is the logically assigning tasks from firefighter leader to tool group (Angriffstrupp)
+        // for reality, we need animations like giveing order.. 
+        if(toolGroupScript != null){
+            toolGroupScript.CurrentToolGroupTask = ToolGroupTasks.GlassManagement;
+            return TaskStatus.Succeeded;
+        } else 
+            return TaskStatus.Failed;
+      
     }
 
     public TaskStatus FullAccess()

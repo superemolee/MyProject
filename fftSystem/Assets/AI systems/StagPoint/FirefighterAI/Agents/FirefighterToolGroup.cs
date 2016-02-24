@@ -28,13 +28,22 @@ public class FirefighterToolGroup : MonoBehaviour {
     [BlackboardVariable]
     [NonSerialized]
     public bool
-        isSillStabled;
+        IsSillStabled;
 
     [BlackboardVariable]
     [NonSerialized]
     public bool
-        isWheelStabled;
+        IsWheelStabled;
 
+    [BlackboardVariable]
+    [NonSerialized]
+    public bool
+        IsLaminateManaged;
+
+    [BlackboardVariable]
+    [NonSerialized]
+    public bool
+        IsToughManaged;
 
 #region Vars for Order
     // Note need to be assigned
@@ -86,12 +95,39 @@ public class FirefighterToolGroup : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+#region ReportTasks
+        
         if(InnerCircleReport())
             leaderScript.IsInnerCircleSurveySucceed = true;
 
-        if(isSillStabled&&isWheelStabled)
+
+        if(toolOperatorScript1.IsStableSillSucceed||toolOperatorScript2.IsStableSillSucceed)
+            IsSillStabled = true;
+
+        if(toolOperatorScript1.IsStableWheelSucceed||toolOperatorScript2.IsStableWheelSucceed)
+            IsWheelStabled = true;
+
+        if(IsSillStabled&&IsWheelStabled)
             leaderScript.IsVehicleStabilizationSucceed = true;
-        
+
+
+        if(toolOperatorScript1.IsManageLaminateSucceed||toolOperatorScript2.IsManageLaminateSucceed){
+            toolOperatorScript1.IsManageLaminateSucceed = true;
+            toolOperatorScript2.IsManageLaminateSucceed = true;
+            IsLaminateManaged = true;
+        }
+
+        if(toolOperatorScript1.IsManageToughSucceed||toolOperatorScript2.IsManageToughSucceed){
+            toolOperatorScript1.IsManageToughSucceed = true;
+            toolOperatorScript2.IsManageToughSucceed = true;
+            IsToughManaged = true;
+        }
+
+        if(IsLaminateManaged&&IsToughManaged)
+            leaderScript.IsGlassManagementSucceed = true;
+#endregion
+
         // Obtain a reference to the runtime Blackboard instance
         this.Blackboard = planner.RuntimeBlackboard;
         
@@ -106,7 +142,7 @@ public class FirefighterToolGroup : MonoBehaviour {
         
     }
 
-    
+    #region Task Fucntions
     public TaskStatus StableSills()
     {
         // this is the logically assigning tasks from tool group (Angriffstrupp) to tool operator
@@ -133,11 +169,11 @@ public class FirefighterToolGroup : MonoBehaviour {
             return TaskStatus.Failed;
         
     }
-
+    
     public TaskStatus InnerCircle()
     {
         bool canPerformInnerCircleSurvey = false;
-
+        
         // this is the logically assigning tasks from tool group (Angriffstrupp) to tool operator
         // for reality, we need animations like giveing order.. 
         if (toolOperatorScript1 != null)
@@ -150,7 +186,7 @@ public class FirefighterToolGroup : MonoBehaviour {
             toolOperatorScript2.CurrentToolOperatorTask = ToolOperatorTasks.InnerCircle;
             canPerformInnerCircleSurvey = true;
         }
-
+        
         if(canPerformInnerCircleSurvey)
         {
             return TaskStatus.Succeeded;
@@ -159,6 +195,34 @@ public class FirefighterToolGroup : MonoBehaviour {
             return TaskStatus.Failed;
         
     }
+
+    public TaskStatus LaminateGlassManagement(){
+        // this is the logically assigning tasks from tool group (Angriffstrupp) to tool operator
+        // for reality, we need animations like giveing order.. 
+        if (toolOperatorScript1 != null)
+        {
+            toolOperatorScript1.CurrentToolOperatorTask = ToolOperatorTasks.ManageLaminate;
+            return TaskStatus.Succeeded;
+        } else 
+            return TaskStatus.Failed;
+    }
+
+    public TaskStatus ToughGlassManagement(){
+        // this is the logically assigning tasks from tool group (Angriffstrupp) to tool operator
+        // for reality, we need animations like giveing order.. 
+        if (toolOperatorScript2 != null)
+        {
+            toolOperatorScript2.CurrentToolOperatorTask = ToolOperatorTasks.ManageTough;
+            return TaskStatus.Succeeded;
+        } else 
+            return TaskStatus.Failed;
+    }
+
+   
+    #endregion
+ 
+
+
 
     /// <summary>
     /// Report to the firefighter leader whether the inner circle succeed by the report from tool operators
