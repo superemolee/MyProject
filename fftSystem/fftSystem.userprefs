@@ -1,8 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="D:\Unity Projects\ResearchTest\Assets\Vision.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Animations\Locomotion\Scripts\Locomotion.cs">
     <Files>
+      <File FileName="Assets\Scripts\avatar\vital\Display\BodyRegions.cs" Line="224" Column="3" />
       <File FileName="D:\Unity Projects\ResearchTest\Assets\Vision.cs" Line="38" Column="4" />
+      <File FileName="Assets\AI systems\StagPoint\FirefighterAI\Agents\FirefighterToolOperator.cs" Line="413" Column="39" />
+      <File FileName="Assets\Scripts\GUI\CursorController.cs" Line="1" Column="1" />
+      <File FileName="Assets\AI systems\StagPoint\FirefighterAI\Animator control\FirefighterAnimatorControl.cs" Line="72" Column="3" />
+      <File FileName="Assets\Animations\Locomotion\Scripts\Locomotion.cs" Line="39" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

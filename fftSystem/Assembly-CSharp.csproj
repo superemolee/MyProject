@@ -118,6 +118,7 @@
      <Compile Include="Assets\Scripts\Fierfighter Control\Agent.cs" />
      <Compile Include="Assets\Scripts\Fierfighter Control\FirefighterAgent.cs" />
      <Compile Include="Assets\Scripts\GUI\CursorController.cs" />
+     <Compile Include="Assets\Scripts\GUI\Menu.cs" />
      <Compile Include="Assets\Scripts\GUI\OnHeadMessage.cs" />
      <Compile Include="Assets\Scripts\GlobalValues.cs" />
      <Compile Include="Assets\Scripts\Interactive fire\Fire.cs" />

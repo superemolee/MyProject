@@ -399,7 +399,7 @@ public class FirefighterToolOperator : RescuerGeneral
     [Operator( "Navigate to position", "This function is a generic operator function that controls the agent go to the target postion in the speed of speedMultiplier times default speed and will stop in a distance of stopDist between the target and the agent." )]
     public IEnumerator NavigateToPosition([ScriptParameter] Vector3 target, [DefaultValue( 1f )] float speedMultiplier, [DefaultValue( 5f )] float stopDist)
     {
-        nav.autoBraking = false;
+        //nav.autoBraking = false;
         nav.destination = target;
         //nav.speed = baseNavSpeed * speedMultiplier;
         //nav.acceleration = baseNavAcceleration * speedMultiplier;
