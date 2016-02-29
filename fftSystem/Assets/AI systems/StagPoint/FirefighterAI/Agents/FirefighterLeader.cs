@@ -15,7 +15,7 @@ using Firefighter.Utilities;
 public class FirefighterLeader : RescuerGeneral {
 
     [BlackboardVariable]
-    public bool Rescue;
+    public bool Rescue{ get; set; }
 
 
     private TaskNetworkPlanner planner;

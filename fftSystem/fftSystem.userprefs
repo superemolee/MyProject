@@ -1,11 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GUI\Menu.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\AI systems\StagPoint\FirefighterAI\Agents\FirefighterLeader.cs">
     <Files>
-      <File FileName="Assets\Scripts\DebugHelper.cs" Line="18" Column="10" />
-      <File FileName="Assets\Scripts\GUI\Menu.cs" Line="15" Column="41" />
-      <File FileName="Assets\AI systems\StagPoint\FirefighterAI\Agents\FirefighterLeader.cs" Line="93" Column="38" />
-      <File FileName="Assets\AI systems\StagPoint\FirefighterAI\Agents\FirefighterToolGroup.cs" Line="173" Column="1" />
+      <File FileName="Assets\Scripts\GUI\Menu.cs" Line="71" Column="76" />
+      <File FileName="Assets\Scripts\DebugHelper.cs" Line="36" Column="39" />
+      <File FileName="Assets\AI systems\StagPoint\FirefighterAI\Agents\FirefighterLeader.cs" Line="20" Column="5" />
+      <File FileName="Assets\AI systems\StagPoint\FirefighterAI\Animator control\FirefighterAnimatorControl.cs" Line="7" Column="31" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

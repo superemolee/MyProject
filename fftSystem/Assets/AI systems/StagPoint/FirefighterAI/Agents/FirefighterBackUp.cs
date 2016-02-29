@@ -177,14 +177,15 @@ public class FirefighterBackUp : RescuerGeneral
 	/// <returns>The salvage should position.</returns>
 	private Vector3 CalcSalvageShouldPos (float dist)
 	{
-		Vector2 target = new Vector2 (SalvageSheet.transform.position.x, SalvageSheet.transform.position.z);
-		Vector2 original = new Vector2 (InnerCircleSurveyTarget.x, InnerCircleSurveyTarget.z);
-		Vector2 dir = target - original;
-		Vector2 dirNormalized = dir / Vector2.Distance (target, original);
-		Vector2 result = original + dirNormalized * dist;
-
-		return new Vector3 (result.x, 0, result.y);
-	}
+//		Vector2 target = new Vector2 (SalvageSheet.transform.position.x, SalvageSheet.transform.position.z);
+//		Vector2 original = new Vector2 (InnerCircleSurveyTarget.x, InnerCircleSurveyTarget.z);
+//		Vector2 dir = target - original;
+//		Vector2 dirNormalized = dir / Vector2.Distance (target, original);
+//		Vector2 result = original + dirNormalized * dist;
+//
+//		return new Vector3 (result.x, 0, result.y);
+        return new Vector3(0, 0, 0);
+    }
 	
 	private float distance2D (Vector3 lhs, Vector3 rhs)
 	{
