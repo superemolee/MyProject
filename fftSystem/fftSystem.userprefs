@@ -1,11 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GUI\GUIScriptsFromPackage\PanelManager.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GUI\Menu.cs">
     <Files>
-      <File FileName="Assets\Scripts\GUI\GUIScriptsFromPackage\ApplicationManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GUI\GUIScriptsFromPackage\PanelManager.cs" Line="115" Column="6" />
-      <File FileName="D:\Unity Projects\ResearchTestGUI\Assets\Scripts\TiltWindow.cs" Line="1" Column="1" />
-      <File FileName="Assets\AI systems\StagPoint\FirefighterAI\Agents\FirefighterToolOperator.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\DebugHelper.cs" Line="18" Column="10" />
+      <File FileName="Assets\Scripts\GUI\Menu.cs" Line="15" Column="41" />
+      <File FileName="Assets\AI systems\StagPoint\FirefighterAI\Agents\FirefighterLeader.cs" Line="93" Column="38" />
+      <File FileName="Assets\AI systems\StagPoint\FirefighterAI\Agents\FirefighterToolGroup.cs" Line="173" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

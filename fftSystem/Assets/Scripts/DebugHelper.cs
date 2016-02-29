@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿
+
+using UnityEngine;
 using System.Collections;
 
 public class DebugHelper : MonoBehaviour
@@ -13,7 +15,7 @@ public class DebugHelper : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Time.timeScale = gamespeed;
+       // Time.timeScale = gamespeed;
     }
 	
     // Update is called once per frame
@@ -37,4 +39,6 @@ public class DebugHelper : MonoBehaviour
         
         }
     }
+
+
 }
