@@ -113,8 +113,14 @@ public class PanelManager : MonoBehaviour
 
     public void AITest()
     {
-        //Application.LoadLevel("Firefighterscene");
+        //StartLoadingScene();
+        DontDestroyOnLoad(this);
         StartCoroutine( LoadALevel("Firefighterscene")); 
+    }
+
+    private void StartLoadingScene()
+    {
+
     }
 
 
