@@ -114,7 +114,6 @@
      <Compile Include="Assets\Scripts\Car\CrashedCarController.cs" />
      <Compile Include="Assets\Scripts\Car\CrashedCarGlassController.cs" />
      <Compile Include="Assets\Scripts\Car\CrashedCarStates.cs" />
-     <Compile Include="Assets\Scripts\DebugHelper.cs" />
      <Compile Include="Assets\Scripts\Fierfighter Control\Agent.cs" />
      <Compile Include="Assets\Scripts\Fierfighter Control\FirefighterAgent.cs" />
      <Compile Include="Assets\Scripts\GUI\CursorController.cs" />

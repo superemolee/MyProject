@@ -10,6 +10,9 @@ public class FirefighterAnimatorControl : MonoBehaviour {
 	//public bool rayNav;
 	private float SpeedDampTime = .25f;
 	private float DirectionDampTime = .25f;	
+
+    private bool isLookAt;
+    private Vector3 lookAtPos;
 	
 	
 	// Use this for initialization
@@ -27,6 +30,40 @@ public class FirefighterAnimatorControl : MonoBehaviour {
 	{
 		agent.destination = tar;
 	}
+
+    public void SetDirection(Vector3 tar){
+        //transform.rotation = Quaternion.LookRotation (tar - transform.position);
+        tar.y= 0;
+        transform.LookAt(tar);
+    }
+
+    // IK for look at the target
+    public void LookAtTarget(Vector3 tar){
+        isLookAt = true;
+        lookAtPos = tar;
+    }
+
+    void OnAnimatorIK()
+    {
+        // lookat IK system
+        if(animator) {
+            
+            //if the IK is active, set the position and rotation directly to the goal. 
+            if(isLookAt) {
+                
+                // Set the look target position, if one has been assigned
+                if(lookAtPos != null) {
+                    animator.SetLookAtWeight(1);
+                    animator.SetLookAtPosition(lookAtPos);
+                }    
+            }
+            
+            //if the IK is not active, set the position and rotation of the hand and head back to the original position
+            else {          
+                animator.SetLookAtWeight(0);
+            }
+        }
+    }    
 	
 	protected void SetupAgentLocomotion ()
 	{

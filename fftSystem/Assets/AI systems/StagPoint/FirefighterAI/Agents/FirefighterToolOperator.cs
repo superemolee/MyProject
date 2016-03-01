@@ -17,9 +17,11 @@ public class FirefighterToolOperator : RescuerGeneral
 {
     private NavMeshAgent nav;
     private Animator m_animator;
+    private FirefighterAnimatorControl m_animatorControl;
     private float turnDirection = 1f;
     private float baseNavSpeed = 6f;
     private float baseNavAcceleration = 12f;
+    private Quaternion originRotation;
 
     public ToolController toolController;
 
@@ -227,10 +229,11 @@ public class FirefighterToolOperator : RescuerGeneral
     {
         planner = GetComponent<TaskNetworkPlanner>();
 
-
         this.nav = GetComponent<NavMeshAgent>();
 
         this.m_animator = GetComponent<Animator>();
+
+        m_animatorControl = GetComponent<FirefighterAnimatorControl>();
 
         // TODO: use visual to sence these objects, however, this init here atm.
         Car1 = GameObject.Find("Car1");
@@ -244,7 +247,7 @@ public class FirefighterToolOperator : RescuerGeneral
         TooltoFind = "";
 
         SpareLoc = transform.position;
-
+        originRotation = transform.rotation;
 
 
         // Obtain a reference to the runtime Blackboard instance
@@ -400,7 +403,8 @@ public class FirefighterToolOperator : RescuerGeneral
     public IEnumerator NavigateToPosition([ScriptParameter] Vector3 target, [DefaultValue( 1f )] float speedMultiplier, [DefaultValue( 5f )] float stopDist)
     {
         //nav.autoBraking = false;
-        nav.destination = target;
+        m_animatorControl.SetDestination(target);
+        //nav.destination = target;
         //nav.speed = baseNavSpeed * speedMultiplier;
         //nav.acceleration = baseNavAcceleration * speedMultiplier;
 
@@ -410,9 +414,11 @@ public class FirefighterToolOperator : RescuerGeneral
 			
             if (disVec.magnitude < stopDist)
             {
+                m_animatorControl.SetDirection(target);
                 target = Vector3.zero;
                 nav.Stop();
                 yield return TaskStatus.Succeeded;
+
             }
             yield return TaskStatus.Running;
         }
@@ -433,6 +439,7 @@ public class FirefighterToolOperator : RescuerGeneral
         List<Vector3> points = pointsOnCircle(target, transform.position, 30);
         int IsCheck_id = Animator.StringToHash("IsCheck");
         bool isCheck = true;
+        m_animatorControl.LookAtTarget(target);
         while (true)
         {
             m_animator.SetBool(IsCheck_id, false);
@@ -447,7 +454,6 @@ public class FirefighterToolOperator : RescuerGeneral
                 m_animator.SetBool(IsCheck_id, true);
                 isCheck = false;
                 transform.rotation = Quaternion.LookRotation(target - transform.position);
-//                Debug.Log(target);
                 //nav.Stop();
             }
             if (points.Count == 0)
@@ -515,6 +521,8 @@ public class FirefighterToolOperator : RescuerGeneral
         int direction_id = Animator.StringToHash("Direction");
         m_animator.SetFloat(speed_id, 0.0f);
         m_animator.SetFloat(direction_id, 0.0f);
+        transform.position= new Vector3(SpareLoc.x,transform.position.y,SpareLoc.z);
+        transform.rotation = originRotation;
         setcurrentTask(0);
         return TaskStatus.Succeeded;
 		
@@ -593,7 +601,6 @@ public class FirefighterToolOperator : RescuerGeneral
     /// <returns>The tool.</returns>
     public IEnumerator UseTool([ScriptParameter]string toolName)
     {
-
         while (toolName!="")
         {
             if (toolController.Use(toolName))
