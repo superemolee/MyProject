@@ -194,6 +194,7 @@ public class FirefighterToolGroup : MonoBehaviour
         
         if (canPerformInnerCircleSurvey)
         {
+            canPerformInnerCircleSurvey = false;
             return TaskStatus.Succeeded;
         } else 
             return TaskStatus.Failed;

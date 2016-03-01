@@ -461,6 +461,7 @@ public class FirefighterToolOperator : RescuerGeneral
                 nav.autoBraking = true;
                 nav.destination = transform.position;
                 nav.Stop();
+                m_animatorControl.StopLooking();
                 yield return TaskStatus.Succeeded;
             }
             yield return TaskStatus.Running;
@@ -516,14 +517,14 @@ public class FirefighterToolOperator : RescuerGeneral
         //nav.autoBraking = true;
         //nav.destination = transform.position;
         nav.Stop();
-        InnerCircleSurveyTarget = Vector3.zero;
+        //InnerCircleSurveyTarget = Vector3.zero;
         int speed_id = Animator.StringToHash("Speed");
         int direction_id = Animator.StringToHash("Direction");
         m_animator.SetFloat(speed_id, 0.0f);
         m_animator.SetFloat(direction_id, 0.0f);
         transform.position= new Vector3(SpareLoc.x,transform.position.y,SpareLoc.z);
         transform.rotation = originRotation;
-        setcurrentTask(0);
+        CurrentToolOperatorTask = ToolOperatorTasks.Free;
         return TaskStatus.Succeeded;
 		
     }

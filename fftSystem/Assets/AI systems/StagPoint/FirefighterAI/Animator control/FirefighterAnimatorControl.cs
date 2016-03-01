@@ -43,6 +43,10 @@ public class FirefighterAnimatorControl : MonoBehaviour {
         lookAtPos = tar;
     }
 
+    public void StopLooking(){
+        isLookAt = false;
+    }
+
     void OnAnimatorIK()
     {
         // lookat IK system
@@ -53,7 +57,7 @@ public class FirefighterAnimatorControl : MonoBehaviour {
                 
                 // Set the look target position, if one has been assigned
                 if(lookAtPos != null) {
-                    animator.SetLookAtWeight(1);
+                    animator.SetLookAtWeight(1,0.3f,0.6f,1.0f,0.5f);
                     animator.SetLookAtPosition(lookAtPos);
                 }    
             }
@@ -81,11 +85,6 @@ public class FirefighterAnimatorControl : MonoBehaviour {
 			Vector3 velocity = Quaternion.Inverse (transform.rotation) * agent.desiredVelocity;
 			
 			float angle = Mathf.Atan2 (velocity.x, velocity.z) * 180.0f / 3.14159f;
-//			Debug.Log("transform.rotation   " + transform.rotation);
-//			Debug.Log("agent.desiredVelocity   " + agent.desiredVelocity);
-//			Debug.Log("velocity   " + velocity);
-
-			//Debug.Log("angle   " + speed);
 
 			locomotion.Do (speed, angle);
 		}
