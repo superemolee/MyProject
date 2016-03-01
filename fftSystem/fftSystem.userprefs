@@ -1,11 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\AI systems\StagPoint\FirefighterAI\Agents\FirefighterLeader.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\AI systems\StagPoint\FirefighterAI\Animator control\FirefighterAnimatorControl.cs">
     <Files>
-      <File FileName="Assets\Scripts\GUI\Menu.cs" Line="71" Column="76" />
-      <File FileName="Assets\Scripts\DebugHelper.cs" Line="36" Column="39" />
-      <File FileName="Assets\AI systems\StagPoint\FirefighterAI\Agents\FirefighterLeader.cs" Line="20" Column="5" />
-      <File FileName="Assets\AI systems\StagPoint\FirefighterAI\Animator control\FirefighterAnimatorControl.cs" Line="7" Column="31" />
+      <File FileName="Assets\AI systems\StagPoint\FirefighterAI\Animator control\FirefighterAnimatorControl.cs" Line="46" Column="75" />
+      <File FileName="Assets\Animations\Locomotion\Scripts\Locomotion.cs" Line="21" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -12,7 +12,8 @@ using StagPoint.Planning.Components;
 using Firefighter.Utilities;
 
 [RequireComponent( typeof(TaskNetworkPlanner) )]
-public class FirefighterToolGroup : MonoBehaviour {
+public class FirefighterToolGroup : MonoBehaviour
+{
 
     private TaskNetworkPlanner planner;
     
@@ -75,56 +76,60 @@ public class FirefighterToolGroup : MonoBehaviour {
         leaderScript;
 #endregion
 
-	// Use this for initialization
-	void Start () {
-        if(toolOperator1 != null)
+    // Use this for initialization
+    void Start()
+    {
+        if (toolOperator1 != null)
             toolOperatorScript1 = toolOperator1.GetComponent<FirefighterToolOperator>();
         else
             Debug.LogError("Init Error: Please assign ToolOperator 1 object to the firefighter tool group.");
         
-        if(toolOperator2 != null)
+        if (toolOperator2 != null)
             toolOperatorScript2 = toolOperator2.GetComponent<FirefighterToolOperator>();
         else
             Debug.LogError("Init Error: Please assign ToolOperator 2 object to the firefighter tool group.");
 
-        if(firefighterLeader != null)
+        if (firefighterLeader != null)
             leaderScript = firefighterLeader.GetComponent<FirefighterLeader>();
         else
             Debug.LogError("Init Error: Please assign firefighter leader object to the firefighter leader.");
-	}
+    }
 	
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update()
+    {
 
 #region ReportTasks
         
-        if(InnerCircleReport())
+        if (InnerCircleReport())
             leaderScript.IsInnerCircleSurveySucceed = true;
 
 
-        if(toolOperatorScript1.IsStableSillSucceed||toolOperatorScript2.IsStableSillSucceed)
+        if (toolOperatorScript1.IsStableSillSucceed || toolOperatorScript2.IsStableSillSucceed)
             IsSillStabled = true;
 
-        if(toolOperatorScript1.IsStableWheelSucceed||toolOperatorScript2.IsStableWheelSucceed)
+        if (toolOperatorScript1.IsStableWheelSucceed || toolOperatorScript2.IsStableWheelSucceed)
             IsWheelStabled = true;
 
-        if(IsSillStabled&&IsWheelStabled)
+        if (IsSillStabled && IsWheelStabled)
             leaderScript.IsVehicleStabilizationSucceed = true;
 
 
-        if(toolOperatorScript1.IsManageLaminateSucceed||toolOperatorScript2.IsManageLaminateSucceed){
+        if (toolOperatorScript1.IsManageLaminateSucceed || toolOperatorScript2.IsManageLaminateSucceed)
+        {
             toolOperatorScript1.IsManageLaminateSucceed = true;
             toolOperatorScript2.IsManageLaminateSucceed = true;
             IsLaminateManaged = true;
         }
 
-        if(toolOperatorScript1.IsManageToughSucceed||toolOperatorScript2.IsManageToughSucceed){
+        if (toolOperatorScript1.IsManageToughSucceed || toolOperatorScript2.IsManageToughSucceed)
+        {
             toolOperatorScript1.IsManageToughSucceed = true;
             toolOperatorScript2.IsManageToughSucceed = true;
             IsToughManaged = true;
         }
 
-        if(IsLaminateManaged&&IsToughManaged)
+        if (IsLaminateManaged && IsToughManaged)
             leaderScript.IsGlassManagementSucceed = true;
 #endregion
 
@@ -134,7 +139,7 @@ public class FirefighterToolGroup : MonoBehaviour {
         // Data bind blackboard variables
         Blackboard.DataBind(this, BlackboardBindingMode.AttributeControlled);
 	
-	}
+    }
 
     void OnEnable()
     {
@@ -181,22 +186,22 @@ public class FirefighterToolGroup : MonoBehaviour {
             toolOperatorScript1.CurrentToolOperatorTask = ToolOperatorTasks.InnerCircle;
             canPerformInnerCircleSurvey = true;
         } 
-        if(toolOperatorScript2 != null)
+        if (toolOperatorScript2 != null)
         {
             toolOperatorScript2.CurrentToolOperatorTask = ToolOperatorTasks.InnerCircle;
             canPerformInnerCircleSurvey = true;
         }
         
-        if(canPerformInnerCircleSurvey)
+        if (canPerformInnerCircleSurvey)
         {
             return TaskStatus.Succeeded;
-        }
-        else 
+        } else 
             return TaskStatus.Failed;
         
     }
 
-    public TaskStatus LaminateGlassManagement(){
+    public TaskStatus LaminateGlassManagement()
+    {
         // this is the logically assigning tasks from tool group (Angriffstrupp) to tool operator
         // for reality, we need animations like giveing order.. 
         if (toolOperatorScript1 != null)
@@ -207,7 +212,8 @@ public class FirefighterToolGroup : MonoBehaviour {
             return TaskStatus.Failed;
     }
 
-    public TaskStatus ToughGlassManagement(){
+    public TaskStatus ToughGlassManagement()
+    {
         // this is the logically assigning tasks from tool group (Angriffstrupp) to tool operator
         // for reality, we need animations like giveing order.. 
         if (toolOperatorScript2 != null)
@@ -228,17 +234,20 @@ public class FirefighterToolGroup : MonoBehaviour {
     /// Report to the firefighter leader whether the inner circle succeed by the report from tool operators
     /// </summary>
     /// <returns><c>true</c>, if InnerCircleSurvey is performed successfully, <c>false</c> otherwise.</returns>
-    public bool InnerCircleReport(){
+    public bool InnerCircleReport()
+    {
         bool isPerformInnerCircleSurvey = false;
         if (toolOperatorScript1 != null)
         {
-            if(toolOperatorScript1.IsInnerCircleSurveySucceed == true)
+            if (toolOperatorScript1.IsInnerCircleSurveySucceed == true)
                 isPerformInnerCircleSurvey = true;
         }
-        if(toolOperatorScript2 != null){
-            if(toolOperatorScript2.IsInnerCircleSurveySucceed == true)
+        if (toolOperatorScript2 != null)
+        {
+            if (toolOperatorScript2.IsInnerCircleSurveySucceed == true)
                 isPerformInnerCircleSurvey = true;
         }
         return isPerformInnerCircleSurvey;
     }
+
 }
