@@ -33,7 +33,7 @@ public class FirefighterAnimatorControl : MonoBehaviour {
 
     public void SetDirection(Vector3 tar){
         //transform.rotation = Quaternion.LookRotation (tar - transform.position);
-        tar.y= 0;
+        tar.y= transform.position.y;
         transform.LookAt(tar);
     }
 
